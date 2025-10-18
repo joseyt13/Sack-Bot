@@ -9,7 +9,7 @@ let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner
   const isShowBots = /^(bots|sockets|socket)$/i.test(command);
 
   const reportError = async (e) => {
-    await m.reply(`⚠️ Error inesperado.`)
+    await m.reply(`⚠️ Error inesperado.`);
     console.error(e);
 };
 
@@ -21,8 +21,16 @@ let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner
 
       if (!fs.existsSync(dirPath)) {
         await conn.sendMessage(m.chat, {
-          text: `🚫 *Sin sesión activa*\n\nUsa *${usedPrefix}qr* para crear una.\n\n¿Tienes ID?\nUsa *${usedPrefix}code* \`\`\`(ID)\`\`\``,
-          buttons: [{ buttonId: `${usedPrefix}code`, buttonText: { displayText: '𝐂ᴏᴘɪᴀʀ 𝐂ᴏᴅᴇ'}, type: 1}],
+          text: `🚫 *Sin sesión activa*\n\nUsa *${usedPrefix}qr* para crear una.\n\n¿Tienes ID?\nPresiona el botón para usar el comando.code.`,
+          buttons: [
+            {
+              buttonId: `${usedPrefix}code`,
+              buttonText: { displayText: 'SER SUB-BOT'},
+              type: 1
+}
+          ],
+          footer: '⏳ Este botón ejecuta el comando.code',
+          headerType: 1
 }, { quoted: m});
         return;
 }
@@ -78,7 +86,7 @@ let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner
       const msg = `*SUB-BOTS ACTIVOS* ⚙️\n\nConectados: ${users.length}\n\n${users.length? lista: '💤 No hay Sub-Bots activos.'}`;
 
       await _envio.sendMessage(m.chat, {
-        image: { url: 'https://files.catbox.moe/65rdkc.jpg'},
+        image: { url: 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg'},
         caption: msg,
         mentions: _envio.parseMention(msg)
 }, { quoted: m});
