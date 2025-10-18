@@ -42,12 +42,12 @@ global.RubyJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '⏤̛̣̣̣̣̣̣̣̣̣̣̣͟͟͞͞⏤͟͟͞͞🍭𝐑υׁׅ𝐛𝐲 𝐇ᨵׁׅׅ𝐬𝐡𝐢𝐧ᨵׁׅׅ ૮(˶ᵔᵕᵔ˶)ა'
-global.botname = ' ࣪☀ ࣭𝗥𝘂𝗯𝘆 𝗛𝗼𝘀𝗵𝗶𝗻𝗼 𝗕𝗼𝘁࣪ 𝟹𝟹 ✿'
-global.wm = '‧˚꒰🍷꒱ ፝͜⁞R͢ᴜʙʏ-H͢ᴼ꯭s፝֟ʜɪɴᴏ-𝘉𝘰𝘵-𝑴𝑫✰⃔⃝🦋'
-global.author = 'Made By 𐔌Dioneibi-rip ͡꒱ ۫'
-global.dev = '⌬ Modified by: Dioneibi-rip ⚙️💻 '
-global.textbot = '⏤͟͞ू⃪ 𝑹𝒖𝒃𝒚-𝐻𝒐𝒔𝒉𝒊𝒏𝒐🌸⃝𖤐 • 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 ᴰⁱᵒⁿᵉⁱᵇⁱ⁻ʳⁱᵖ'
+global.packname = '⏤̛̣̣̣̣̣̣̣̣̣̣̣͟͟͞͞⚽ 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀 ૮(˶ᵔᵕᵔ˶)ა'
+global.botname = ' ࣪🌙  ࣭𝗡𝗮𝗴𝗶𝗕𝗼𝘁-𝗜𝗔࣪ 𝟹𝟹 ✿'
+global.wm = '‧˚ ፝͜⁞N͢ᴀɢɪ-B͢ᴼ꯭ᴛ-𝑰𝑨-𝑴𝑫 ⚽'
+global.author = 'Made By 𐔌Dev-fedexyz ͡꒱ ۫'
+global.dev = '⌬ Powered by: Dev-fedexyz ⚽ '
+global.textbot = '⏤͟͞ 𝑵𝒂𝒈𝒊𝐁𝐨𝐭-𝐈𝐀 ⚽⃝  • 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 global.etiqueta = 'ˑ 𓈒 𐔌 Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ  ͡꒱ ۫'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
