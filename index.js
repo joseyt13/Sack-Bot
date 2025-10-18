@@ -56,12 +56,12 @@ cfonts.say('created by Dev-fedexyz', {
   colors: ['blueBright']
 })
 
-console.log(chalk.greenBright('┌────────────────────────────────────────────┐'));
-console.log(chalk.whiteBright('│ 🤖 Nagi-BotV1 iniciado correctamente        │'));
-console.log(chalk.whiteBright('│ Creado por: Dev-fedexyz                    │'));
-console.log(chalk.whiteBright('│ GitHub: github.com/Dev-fedexyz13          │'));
-console.log(chalk.whiteBright('│ Contacto: wa.me/5491156178748              │'));
-console.log(chalk.greenBright('└────────────────────────────────────────────┘\n'));
+console.log(chalk.cyanBright('\n╭─────────────── Nagi-BotV1 ────────────────╮'));
+console.log(chalk.whiteBright('│ 🌿 Estado: iniciado correctamente           │'));
+console.log(chalk.whiteBright('│ 👤 Creador: Dev-fedexyz                     │'));
+console.log(chalk.whiteBright('│ 🌐 GitHub: github.com/Dev-fedexyz13         │'));
+console.log(chalk.whiteBright('│ 📞 Contacto: wa.me/5491156178748            │'));
+console.log(chalk.cyanBright('╰────────────────────────────────────────────╯\n'));
 
 protoType()
 serialize()
