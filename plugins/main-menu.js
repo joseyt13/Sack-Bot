@@ -23,9 +23,9 @@ let handler = async (m, { conn, usedPrefix}) => {
     'tools': '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
 }
 
-  let header = '*- %category*'
-  let body = '│> %cmd'
-  let footer = '└––'
+  let header = '*%category*'
+  let body = '> ▪︎ %cmd'
+  let footer = ''
   let after = `🌿 Nagi-BotV1`
 
   let user = global.db.data.users[m.sender]
@@ -44,19 +44,18 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let infoUser = `
-🌸 ʜᴏʟᴀ, ${nombre}
-ꜱᴏʏ Nagi-BotV1, ʟɪꜱᴛᴀ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
+🍃 Hola, ${nombre} Soy Nagi-BotV1
 
-*乂 ɪɴꜰᴏ ᴅᴇʟ ᴜꜱᴜᴀʀɪᴏ*
->> ᴇꜱᴛᴀᴅᴏ: ᴜꜱᴜᴀʀɪᴏ
->> ᴘʀᴇᴍɪᴜᴍ: ${premium}
->> ʟíᴍɪᴛᴇ: ${limite}
+*🌿 I N F O - U S E R*
+> > *Usuario:* ᴜꜱᴜᴀʀɪᴏ
+> > *Premium:* ${premium}
+> > *Limite:* ${limite}
 
-*乂 ɪɴꜰᴏ ᴅᴇʟ ʙᴏᴛ*
->> *Grupos:* ${groupsCount}
->> *Activo:* ${muptime}
->> *Usuarios:* ${totalreg}
->> *Plataforma:* ʟɪɴᴜx
+*🌿 I N F O - B O T*
+> > *Grupos:* ${groupsCount}
+> > *Activo:* ${muptime}
+> > *Usuarios:* ${totalreg}
+> > *Plataforma:* Ubuntu
 `.trim()
 
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
