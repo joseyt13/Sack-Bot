@@ -18,8 +18,8 @@ global.botNumber = '' //Ejemplo: 5491156178758
 global.owner = [
 // <-- Número @s.whatsapp.net -->
   ['5491156178758', 'Dev-fedexy ࣪˖ ִֶָ⚽་༘', true],
-  ['18096758983', 'Dev-fedexy ☕', true],
-  ['50248019799', 'Dev-fedexy 👻', true],
+  ['5491124918653', 'Dev-fedexy ☕', true],
+  ['584264257867', 'Dev-fedexy 👻', true],
 ];
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -34,10 +34,10 @@ global.libreria = 'Baileys'
 global.baileys = 'V 6.7.16' 
 global.languaje = 'Español'
 global.vs = '2.2.0'
-global.nameqr = 'Ruby-Hoshino-Bot-MD'
-global.namebot = '꒰ 🥥 ꒱ؘ 𝙍𝙪𝙗𝙮-𝙃𝙤𝙨𝙝𝙞𝙣𝙤-𝘽𝙤𝙩 ♪ ࿐ ࿔*:･ﾟ'
-global.Rubysessions = 'RubySessions'
-global.jadi = 'RubyJadiBots' 
+global.nameqr = 'NagiBot-IA'
+global.namebot = '☕ NagiBot-IA ♪*:⚽･ﾟ'
+global.Rubysessions = 'NagiSessions'
+global.jadi = 'NagiJadiBots' 
 global.RubyJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -48,7 +48,7 @@ global.wm = '‧˚꒰🍷꒱ ፝͜⁞R͢ᴜʙʏ-H͢ᴼ꯭s፝֟ʜɪɴᴏ-𝘉�
 global.author = 'Made By 𐔌Dioneibi-rip ͡꒱ ۫'
 global.dev = '⌬ Modified by: Dioneibi-rip ⚙️💻 '
 global.textbot = '⏤͟͞ू⃪ 𝑹𝒖𝒃𝒚-𝐻𝒐𝒔𝒉𝒊𝒏𝒐🌸⃝𖤐 • 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 ᴰⁱᵒⁿᵉⁱᵇⁱ⁻ʳⁱᵖ'
-global.etiqueta = 'ˑ 𓈒 𐔌 D͙i͙o͙n͙e͙i͙b͙i͙-r͙i͙p͙ ͡꒱ ۫'
+global.etiqueta = 'ˑ 𓈒 𐔌 Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ  ͡꒱ ۫'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
