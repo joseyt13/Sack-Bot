@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix}) => {
     'tools': '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
 }
 
-  let header = '*%category*'
+  let header = '*□  %category*'
   let body = '> ▪︎ %cmd'
   let footer = ''
   let after = `🌿 Nagi-BotV1`
@@ -44,7 +44,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let infoUser = `
-🍃 Hola, ${nombre} Soy Nagi-BotV1
+🍃 *_Hola, ${nombre} Soy Nagi-BotV1._*
 
 *🌿 I N F O - U S E R*
 > *Usuario:* ᴜꜱᴜᴀʀɪᴏ
