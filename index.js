@@ -52,15 +52,15 @@ cfonts.say('Nagi - Bot', {
   env: 'node'
 })
 
-cfonts.say('created by Dev-fedexyz ', {
-  font: 'block',
+cfonts.say('created by Dev-fedexyz', {
+  font: 'console',
   align: 'center',
-  colors: ['greenBright']
-});
+  colors: ['blueBright']
+})
 
 console.log(chalk.greenBright('┌────────────────────────────────────────────┐'));
 console.log(chalk.whiteBright('│ 🤖 Nagi-BotV1 iniciado correctamente        │'));
-console.log(chalk.whiteBright('│ Creado por: Dev-fedexyz 🌿                  │'));
+console.log(chalk.whiteBright('│ Creado por: Dev-fedexyz                    │'));
 console.log(chalk.whiteBright('│ GitHub: github.com//Dev-fedexyz13          │'));
 console.log(chalk.whiteBright('│ Contacto: wa.me/6491156178748              │'));
 console.log(chalk.greenBright('└────────────────────────────────────────────┘\n'));
