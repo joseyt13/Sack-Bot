@@ -39,7 +39,7 @@ global.NagiJadibts = true
 
 // Nombre bot - Y más
 
-global.packname = 'Nagi-BotV1  🌿
+global.packname = 'Nagi-BotV1  🌿'
 global.botname = '⚽ Nagi - Bot 🍂'
 global.wm = 'NagiBot - MD ⚽'
 global.author = '© Made By dev-fedexyz'
