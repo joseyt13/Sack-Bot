@@ -56,6 +56,9 @@ let handler = async (m, { conn, usedPrefix}) => {
 > *Activo:* ${muptime}
 > *Usuarios:* ${totalreg}
 > *Plataforma:* Ubuntu
+
+
+*🍃 C O M A N D O S*
 `.trim()
 
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
