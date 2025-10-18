@@ -24,7 +24,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let header = '*□  %category*'
-  let body = '> ▪︎ %cmd'
+  let body = '> ¤ %cmd'
   let footer = ''
   let after = `🌿 Nagi-BotV1`
 
@@ -47,7 +47,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 🍃 *_Hola, ${nombre} Soy Nagi-BotV1._*
 
 *🌿 I N F O - U S E R*
-> *Usuario:* ᴜꜱᴜᴀʀɪᴏ
+> *Usuario:* ${nombre}
 > *Premium:* ${premium}
 > *Limite:* ${limite}
 
@@ -58,7 +58,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 > *Plataforma:* Ubuntu
 
 
-*🍃 C O M A N D O S*
+*🍃 𝘾 𝙊 𝙈 𝘼 𝙉 𝘿 𝙊 𝙎*
 `.trim()
 
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
