@@ -40,9 +40,7 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 //const yuw = dirname(fileURLToPath(import.meta.url))
 //let require = createRequire(megu)
 let { say } = cfonts
-
-
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
+console.log(chalk.magentaBright('\n.....Iniciando.....'))
 
 cfonts.say('Nagi - Bot', {
   font: 'chrome',
@@ -61,8 +59,8 @@ cfonts.say('created by Dev-fedexyz', {
 console.log(chalk.greenBright('┌────────────────────────────────────────────┐'));
 console.log(chalk.whiteBright('│ 🤖 Nagi-BotV1 iniciado correctamente        │'));
 console.log(chalk.whiteBright('│ Creado por: Dev-fedexyz                    │'));
-console.log(chalk.whiteBright('│ GitHub: github.com//Dev-fedexyz13          │'));
-console.log(chalk.whiteBright('│ Contacto: wa.me/6491156178748              │'));
+console.log(chalk.whiteBright('│ GitHub: github.com/Dev-fedexyz13          │'));
+console.log(chalk.whiteBright('│ Contacto: wa.me/5491156178748              │'));
 console.log(chalk.greenBright('└────────────────────────────────────────────┘\n'));
 
 protoType()
