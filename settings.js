@@ -33,7 +33,7 @@ global.languaje = 'Español'
 global.vs = '2.2.0'
 global.nameqr = 'NagiBot-MD 🍂'
 global.namebot = '☕ NagiBot-IA 🌿'
-global.Nagisessions = 'NagiSessions'
+global.Rubysessions = 'NagiSessions'
 global.jadi = 'NagiJadiBots' 
 global.NagiJadibts = true
 
