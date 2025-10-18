@@ -40,7 +40,7 @@ global.NagiJadibts = true
 // Nombre bot - Y más
 
 global.packname = 'Nagi-BotV1  🌿
-global.botname = '⚽ Nagi-Bot 🍂'
+global.botname = '⚽ Nagi - Bot 🍂'
 global.wm = 'NagiBot - MD ⚽'
 global.author = '© Made By dev-fedexyz'
 global.dev = '⌬ powered by Dev-fedexyz 🌿'
@@ -55,7 +55,7 @@ global.avatar = 'https://qu.ax/030303jjpeg'
 
 // Contacto  - y canales
 
-global.gp1 = 'https://chat.whatsapp.com/m'
+global.gp1 = 'https://chat.whatsapp.com/'
 global.comunidad1 = 'https://chat.whatsapp.com/'
 global.channel = 'https://whatsapp.com/channel/'
 global.channel2 = 'https://whatsapp.com/channel/'
@@ -68,7 +68,7 @@ global.cn ='https://whatsapp.com/channel/';
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: '120363335626706839@newsletter',
+ch1: '120363402097425674@newsletter',
 }
 
 // y esto es el final xd
