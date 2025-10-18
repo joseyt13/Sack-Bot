@@ -49,6 +49,6 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 handler.command = ['reg', 'unreg']
 handler.help = ['reg <nombre.edad>', 'unreg']
 handler.tags = ['main']
-handler.register = true
+handler.register = false
 
 export default handler
