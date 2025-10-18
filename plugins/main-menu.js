@@ -24,7 +24,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let header = '*□  %category*'
-  let body = '> ¤ %cmd'
+  let body = '> ▪︎ %cmd'
   let footer = ''
   let after = `🌿 Nagi-BotV1`
 
@@ -97,8 +97,8 @@ let handler = async (m, { conn, usedPrefix}) => {
         newsletterName: 'Nagi-BotV1'
 },
       externalAdReply: {
-        title: 'Dev-fedexyz',
-        body: 'Nagi-BotV1',
+        title: '© Made By Dev-fedexyz 🌿',
+        body: '⌬ NagiBot - IA 🍃',
         thumbnailUrl: imagen,
         mediaType: 1,
         renderLargerThumbnail: true
