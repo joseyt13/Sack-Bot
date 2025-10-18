@@ -83,7 +83,9 @@ let handler = async (m, { conn, usedPrefix}) => {
   await m.react('⚽')
 
   await conn.sendMessage(m.chat, {
-    image: { url: imagen},
+    document: fs.readFileSync('./package.json'),
+    fileName: '🍃 Nagi-BotV1',
+    mimetype: 'application/pdf',
     caption: finalMenu,
     contextInfo: {
       mentionedJid: [m.sender],
