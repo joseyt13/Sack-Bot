@@ -47,15 +47,15 @@ let handler = async (m, { conn, usedPrefix}) => {
 🍃 Hola, ${nombre} Soy Nagi-BotV1
 
 *🌿 I N F O - U S E R*
-> > *Usuario:* ᴜꜱᴜᴀʀɪᴏ
-> > *Premium:* ${premium}
-> > *Limite:* ${limite}
+> *Usuario:* ᴜꜱᴜᴀʀɪᴏ
+> *Premium:* ${premium}
+> *Limite:* ${limite}
 
 *🌿 I N F O - B O T*
-> > *Grupos:* ${groupsCount}
-> > *Activo:* ${muptime}
-> > *Usuarios:* ${totalreg}
-> > *Plataforma:* Ubuntu
+> *Grupos:* ${groupsCount}
+> *Activo:* ${muptime}
+> *Usuarios:* ${totalreg}
+> *Plataforma:* Ubuntu
 `.trim()
 
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
@@ -77,32 +77,38 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
-
   let imagen = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg'
 
   await m.react('⚽')
 
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
-    fileName: '🍃 Nagi-BotV1',
+    fileName: '🌿 Nagi-BotV1',
     mimetype: 'application/pdf',
     caption: finalMenu,
     contextInfo: {
-      mentionedJid: [m.sender],
-      isForwarded: true,
       forwardingScore: 999,
+      isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363402097425674@newsletter',
-        newsletterName: 'Nagi-BotV1',
-        serverMessageId: -1,
+        newsletterName: 'Nagi-BotV1'
+},
+      externalAdReply: {
+        title: 'Dev-fedexyz',
+        body: 'Nagi-BotV1',
+        thumbnailUrl: imagen,
+        mediaType: 1,
+        renderLargerThumbnail: true
 }
 }
 }, { quoted: m})
+
+  await delay(400)
 }
 
 handler.help = ['menu']
-handler.register = true
 handler.tags = ['main']
-handler.command = ['menu', 'menú', 'help']
+handler.command = ['menu', 'help', 'menú', 'allmenu', 'menucompleto']
+handler.register = true
 
 export default handler
