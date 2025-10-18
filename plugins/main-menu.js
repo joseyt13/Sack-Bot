@@ -6,30 +6,28 @@ let handler = async (m, { conn, usedPrefix}) => {
 
   // 🏷️ Categorías
   let tags = {
-  'info': '𝙈𝙚𝙣𝙪 𝙄𝙣𝙛𝙤',
-  'anime': '𝙈𝙚𝙣𝙪 𝘼𝙣𝙞𝙢𝙚',
-  'buscador': '𝙈𝙚𝙣𝙪 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧',
-  'downloader': '𝙈𝙚𝙣𝙪 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙚𝙧',
-  'fun': '𝙈𝙚𝙣𝙪 𝙁𝙪𝙣',
-  'grupo': '𝙈𝙚𝙣𝙪 𝙂𝙧𝙪𝙥𝙤',
-  'ai': '𝙈𝙚𝙣𝙪 𝘼𝙄',
-  'game': '𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚',
-  'jadibot': '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
-  'main': '𝙈𝙚𝙣𝙪 𝙈𝙖𝙞𝙣',
-  'nable': '𝙈𝙚𝙣𝙪 𝙊𝙣 / 𝙊𝙛𝙛',
-  'nsfw': '𝙈𝙚𝙣𝙪 𝙉𝙎𝙁𝙒',
-  'owner': '𝙈𝙚𝙣𝙪 𝙊𝙬𝙣𝙚𝙧',
-  'sticker': '𝙈𝙚𝙣𝙪 𝙎𝙩𝙞𝙘𝙠𝙚𝙧',
-  'tools': '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
+    'info': '𝙈𝙚𝙣𝙪 𝙄𝙣𝙛𝙤',
+    'anime': '𝙈𝙚𝙣𝙪 𝘼𝙣𝙞𝙢𝙚',
+    'buscador': '𝙈𝙚𝙣𝙪 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧',
+    'downloader': '𝙈𝙚𝙣𝙪 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙚𝙧',
+    'fun': '𝙈𝙚𝙣𝙪 𝙁𝙪𝙣',
+    'grupo': '𝙈𝙚𝙣𝙪 𝙂𝙧𝙪𝙥𝙤',
+    'ai': '𝙈𝙚𝙣𝙪 𝘼𝙄',
+    'game': '𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚',
+    'jadibot': '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
+    'main': '𝙈𝙚𝙣𝙪 𝙈𝙖𝙞𝙣',
+    'nable': '𝙈𝙚𝙣𝙪 𝙊𝙣 / 𝙊𝙛𝙛',
+    'nsfw': '𝙈𝙚𝙣𝙪 𝙉𝙎𝙁𝙒',
+    'owner': '𝙈𝙚𝙣𝙪 𝙊𝙬𝙣𝙚𝙧',
+    'sticker': '𝙈𝙚𝙣𝙪 𝙎𝙩𝙞𝙘𝙠𝙚𝙧',
+    'tools': '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
 }
 
-  // 📑 Estilos
   let header = '*- %category*'
-  let body = '│ > %cmd'
+  let body = '│> %cmd'
   let footer = '└––'
-  let after = `🌿 Nagi-BotV1'
+  let after = `🌿 Nagi-BotV1`
 
-  // 📊 Datos del usuario/bot
   let user = global.db.data.users[m.sender]
   let nombre = await conn.getName(m.sender)
   let premium = user.premium? '✅ Sí': '❌ No'
@@ -50,23 +48,17 @@ let handler = async (m, { conn, usedPrefix}) => {
 ꜱᴏʏ Nagi-BotV1, ʟɪꜱᴛᴀ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
 
 *乂 ɪɴꜰᴏ ᴅᴇʟ ᴜꜱᴜᴀʀɪᴏ*
-> > ᴇꜱᴛᴀᴅᴏ: ᴜꜱᴜᴀʀɪᴏ
-> > ᴘʀᴇᴍɪᴜᴍ: ${premium}
-> > ʟíᴍɪᴛᴇ: ${limite}
+>> ᴇꜱᴛᴀᴅᴏ: ᴜꜱᴜᴀʀɪᴏ
+>> ᴘʀᴇᴍɪᴜᴍ: ${premium}
+>> ʟíᴍɪᴛᴇ: ${limite}
 
 *乂 ɪɴꜰᴏ ᴅᴇʟ ʙᴏᴛ*
-> > *Grupos:* ${groupsCount}
-> > *Activo:* ${muptime}
-> > *Usuarios:* ${totalreg}
-> > *Plataforma:* ʟɪɴᴜx
-
-*📩 ᴄᴏɴᴛᴀᴄᴛᴏ ʏ ᴄʀᴇᴅɪᴛᴏꜱ*
-◦ ᴄʀᴇᴀᴅᴏʀ: Dev-fedexyz
-◦ ɢɪᴛʜᴜʙ: github.com/Dev-fedexyz13
-◦ ᴄᴏɴᴛᴀᴄᴛᴏ: wa.me/5491156178748
+>> *Grupos:* ${groupsCount}
+>> *Activo:* ${muptime}
+>> *Usuarios:* ${totalreg}
+>> *Plataforma:* ʟɪɴᴜx
 `.trim()
 
-  // 📜 Lista de comandos organizados
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
     return {
       help: Array.isArray(v.help)? v.help: [v.help],
@@ -87,11 +79,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 
   let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
 
-  // 🎴 Imagen portada e icono
-  let imagen = 'https://cdn.yupra.my.id/yp/8b6org82.jpg'
-  let icono = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg'
-  let redes = 'https://github.com/Dev-fedexyz13'
-  let dev = 'Contacto: wa.me/5491156178748'
+  let imagen = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg'
 
   await m.react('⚽')
 
@@ -104,16 +92,8 @@ let handler = async (m, { conn, usedPrefix}) => {
       forwardingScore: 999,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363402097425674@newsletter',
-        newsletterName: 'Nagi-BotV1 ▪︎ Dev-fedexyz',
+        newsletterName: 'Nagi-BotV1',
         serverMessageId: -1,
-},
-      externalAdReply: {
-        title: 'Nagi-BotV1',
-        body: dev,
-        thumbnailUrl: icono,
-        sourceUrl: redes,
-        mediaType: 1,
-        renderLargerThumbnail: true
 }
 }
 }, { quoted: m})
