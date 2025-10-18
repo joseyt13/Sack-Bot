@@ -155,7 +155,7 @@ if (qr && mcode) {
     const interactiveButtons = [{
         name: "cta_copy",
         buttonParamsJson: JSON.stringify({
-            display_text: "COPIAR - CODIGO",
+            display_text: "ᴄᴏᴘɪᴀʀ - ᴄᴏᴅᴇ",
             id: "copy-jadibot-code",
             copy_code: rawCode
         })
@@ -163,11 +163,12 @@ if (qr && mcode) {
 
     const interactiveMessage = {
     image: { url: "https://cdn.yupra.my.id/yp/qor0rszk.jpg"},
-    caption: `*⚡ ¡Tu código de acceso está listo, piloto de NagiBot-IA! ⚡*\n\nUtiliza el siguiente código para vincularte como Sub-Bot:\n\n*Código:* ${rawCode.match(/.{1,4}/g)?.join("-")}\n\n> Toca el botón de abajo para copiarlo fácilmente.`,
-    title: "🔗 Código de Vinculación - NagiBot-IA",
-    footer: "⏳ Este código expirará en 45 segundos.",
+    caption: `*⚽ ¡𝐓𝐮 𝐜ó𝐝𝐢𝐠𝐨 𝐝𝐞 𝐚𝐜𝐜𝐞𝐬𝐨 𝐞𝐬𝐭á 𝐥𝐢𝐬𝐭𝐨, 𝐩𝐢𝐥𝐨𝐭𝐨 𝐝𝐞 Nᴀɢɪʙᴏᴛ-IA! ⚽*\n\n𝐔𝐭𝐢𝐥𝐢𝐳𝐚 𝐞𝐥 𝐬𝐢𝐠𝐮𝐢𝐞𝐧𝐭𝐞 𝐜ó𝐝𝐢𝐠𝐨 𝐩𝐚𝐫𝐚 𝐯𝐢𝐧𝐜𝐮𝐥𝐚𝐫𝐭𝐞 𝐜𝐨𝐦𝐨 𝐒𝐮𝐛-𝐁𝐨𝐭:\n\n*𝐂ó𝐝𝐢𝐠𝐨:* ${rawCode.match(/.{1,4}/g)?.join("-")}\n\n> 𝐓𝐨𝐜𝐚 𝐞𝐥 𝐛𝐨𝐭ó𝐧 𝐝𝐞 𝐚𝐛𝐚𝐣𝐨 𝐩𝐚𝐫𝐚 𝐜𝐨𝐩𝐢𝐚𝐫𝐥𝐨 𝐟á𝐜𝐢𝐥𝐦𝐞𝐧𝐭𝐞.`,
+    title: "🔗 𝐂ó𝐝𝐢𝐠𝐨 𝐝𝐞 𝐕𝐢𝐧𝐜𝐮𝐥𝐚𝐜𝐢ó𝐧 - Nᴀɢɪʙᴏᴛ-IA",
+    footer: "⏳ 𝐄𝐬𝐭𝐞 𝐜ó𝐝𝐢𝐠𝐨 𝐞𝐱𝐩𝐢𝐫𝐚𝐫á 𝐞𝐧 𝟒𝟓 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.",
     interactiveButtons
 };
+    
     const sentMsg = await conn.sendMessage(m.chat, interactiveMessage, { quoted: m });
     console.log(`Código de vinculación enviado: ${rawCode}`);
 
