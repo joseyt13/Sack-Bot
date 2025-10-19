@@ -42,7 +42,7 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 let { say } = cfonts
 console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
 
-cfonts.say('Nagi - Bot', {
+cfonts.say('NagiBot - MD, {
   font: 'chrome',
   align: 'center',
   gradient: ['#ff4fcb', '#ff77ff'],
@@ -187,7 +187,7 @@ addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
 let codeBot = await conn.requestPairingCode(addNumber)
 codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`✧ CÓDIGO DE VINCULACIÓN ✧`)), chalk.bold.white(chalk.white(codeBot)))
+console.log(chalk.bold.white(chalk.bgMagenta(`🍃 CÓDIGO DE VINCULACIÓN...`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}
 }
@@ -217,10 +217,10 @@ global.timestamp.connect = new Date;
 if (global.db.data == null) loadDatabase();
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
-console.log(chalk.bold.yellow(`\n❐ ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS`))}
+console.log(chalk.bold.yellow(`\n🍃 ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS`))}
 }
 if (connection == 'open') {
-console.log(chalk.bold.green('\n❀ Ruby-Bot Conectada con éxito ❀'))
+console.log(chalk.bold.green('\n🌿 Nagi-Bot Conectada con éxito..'))
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
@@ -293,9 +293,7 @@ isInit = false
 return true
 };
 
-//Arranque nativo para subbots by - ReyEndymion >> https://github.com/ReyEndymion
-
-global.rutaJadiBot = join(__dirname, './RubyJadiBots')
+global.rutaJadiBot = join(__dirname, './NagiJadiBots')
 
 if (global.RubyJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
@@ -393,19 +391,19 @@ const filePath = join(tmpDir, file)
 unlinkSync(filePath)})
 }
 
-function purgeRubySession() {
+function purgeNagiSession() {
 let prekey = []
-let directorio = readdirSync(`./${Rubysessions}`)
+let directorio = readdirSync(`./${Nagisessions}`)
 let filesFolderPreKeys = directorio.filter(file => {
 return file.startsWith('pre-key-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./${Rubysessions}/${files}`)
+unlinkSync(`./${Nagisessions}/${files}`)
 })
 } 
 
-function purgeRubySessionSB() {
+function purgeNagiSessionSB() {
 try {
 const listaDirectorios = readdirSync(`./${jadi}/`);
 let SBprekey = [];
@@ -429,7 +427,7 @@ console.log(chalk.bold.red(`\n╭» ❍ ${jadi} ❍\n│→ OCURRIÓ UN ERROR\n�
 }}
 
 function purgeOldFiles() {
-const directories = [`./${Rubysessions}/`, `./${jadi}/`]
+const directories = [`./${Nagisessions}/`, `./${jadi}/`]
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
 if (err) throw err
@@ -461,19 +459,19 @@ console.log(chalk.bold.cyanBright(`\n╭» ❍ MULTIMEDIA ❍\n│→ ARCHIVOS D
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
-await purgeRubySession()
-console.log(chalk.bold.cyanBright(`\n╭» ❍ ${global.Rubysessions} ❍\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))}, 1000 * 60 * 10) // 10 min
+await purgeNagiSession()
+console.log(chalk.bold.cyanBright(`\n╭» ❍ ${global.Nagisessions} ❍\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))}, 1000 * 60 * 10) // 10 min
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
-await purgeRubySessionSB()}, 1000 * 60 * 10)  
+await purgeNagiSessionSB()}, 1000 * 60 * 10)  
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
 console.log(await purgeOldFiles());
 console.log(chalk.bold.cyanBright(`\n╭» ❍ ARCHIVOS ❍\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))}, 1000 * 60 * 10)
 
-_quickTest().then(() => conn.logger.info(chalk.bold(`✦  H E C H O\n`.trim()))).catch(console.error)
+_quickTest().then(() => conn.logger.info(chalk.bold(`🌿  H E C H O\n`.trim()))).catch(console.error)
 
 async function isValidPhoneNumber(number) {
 try {
