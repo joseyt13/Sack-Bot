@@ -1,4 +1,4 @@
-import { exec} from 'child_process';
+import { execSync} from 'child_process';
 
 const newsletterJid = '120363402097425674@newsletter';
 const newsletterName = '🍂 NagiBot-IA Channel Official 🌿';
@@ -13,42 +13,16 @@ const iconos = [
 
 const getRandomIcono = () => iconos[Math.floor(Math.random() * iconos.length)];
 
-const handler = async (m, { conn, rcanal}) => {
-  m.reply('⚽ Verificando estado del repositorio...', m, rcanal);
+let handler = async (m, { conn, args}) => {
+  try {
+    await conn.reply(m.chat, '🌿 *Actualizando el bot, por favor espera...*', m);
 
-  // Paso 1: Verificar si hay cambios sin confirmar
-  exec('git status --porcelain', (err, statusOut) => {
-    if (err) {
-      conn.reply(m.chat, `🌙 Error al verificar el estado del repositorio.\n🔧 ${err.message}`, m, rcanal);
-      return;
-}
+    const output = execSync('git pull' + (args.length? ' ' + args.join(' '): '')).toString();
+    const msg = output.includes('Already up to date')
+? '🍃 *El bot ya está actualizado.*'
+: `🍂 *Actualización completada:*\n\n\`\`\`${output}\`\`\``;
 
-    if (statusOut.includes('src/database/db.json')) {
-      conn.reply(
-        m.chat,
-        `🚫 No se puede actualizar porque hay cambios locales en *src/database/db.json*.\n\n🛠️ Soluciones:\n1. Usa \`git stash\` para guardar temporalmente los cambios.\n2. O confirma los cambios con \`git commit -am "tu mensaje"\`.\n\nLuego vuelve a intentar la actualización.`,
-        m,
-        rcanal
-);
-      return;
-}
-
-    // Paso 2: Ejecutar la actualización si no hay conflictos
-    m.reply('⚽ Actualizando la bot...', m, rcanal);
-
-    const comandoActualizacion = 'git pull';
-
-    exec(comandoActualizacion, (err, stdout, stderr) => {
-      if (err) {
-        console.error('❌ Error al ejecutar git pull:', err);
-        conn.reply(m.chat, `🌙 Error: No se pudo realizar la actualización.\n🔧 ${err.message}`, m, rcanal);
-        return;
-}
-
-      if (stderr) {
-        console.warn('⚠️ Advertencia durante la actualización:', stderr);
-}
-
+    if (msg) {
       const contextInfo = {
         mentionedJid: [m.sender],
         isForwarded: true,
@@ -68,18 +42,36 @@ const handler = async (m, { conn, rcanal}) => {
 },
 };
 
-      const mensaje = stdout.includes('Already up to date.')
-? '⚽ La bot ya está actualizada.'
-: `🍃 Actualización realizada con éxito.\n\n${stdout}`;
+      await conn.sendMessage(m.chat, { text: msg, contextInfo}, { quoted: m});
+}
+} catch (error) {
+    try {
+      const status = execSync('git status --porcelain').toString().trim();
+      if (status) {
+        const conflictedFiles = status
+.split('\n')
+.filter(line =>!line.includes('NagiSessions/') &&!line.includes('tmp/'));
 
-      conn.sendMessage(m.chat, { text: mensaje, contextInfo}, { quoted: m}, rcanal);
-});
-});
+        if (conflictedFiles.length> 0) {
+          const conflictMsg =
+            `⚠️ *Conflictos detectados en los siguientes archivos:*\n\n` +
+            conflictedFiles.map(f => '• ' + f.slice(3)).join('\n') +
+            `\n\n🔧 *Solución recomendada:* reinstala el bot o resuelve los conflictos manualmente.`;
+
+          return await conn.reply(m.chat, conflictMsg, m);
+}
+}
+} catch (statusError) {
+      console.error('Error al verificar estado de Git:', statusError);
+}
+
+    await conn.reply(m.chat, `❌ *Error al actualizar:* ${error.message || 'Error desconocido.'}`, m);
+}
 };
 
 handler.help = ['update'];
+handler.command = ['update', 'actualizar'];
 handler.tags = ['owner'];
-handler.command = ['update'];
 handler.rowner = true;
 
 export default handler;
