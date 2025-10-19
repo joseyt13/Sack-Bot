@@ -1,16 +1,3 @@
-/*⚠ PROHIBIDO EDITAR ⚠
-Este codigo fue modificado, adaptado y mejorado por
-- ReyEndymion >> https://github.com/ReyEndymion
-El codigo de este archivo esta inspirado en el codigo original de:
-- Aiden_NotLogic >> https://github.com/ferhacks
-*El archivo original del MysticBot-MD fue liberado en mayo del 2024 aceptando su liberacion*
-El codigo de este archivo fue parchado en su momento por:
-- BrunoSobrino >> https://github.com/BrunoSobrino
-Contenido adaptado por:
-- GataNina-Li >> https://github.com/GataNina-Li
-- elrebelde21 >> https://github.com/elrebelde21
-*/
-
 const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion} = (await import("@whiskeysockets/baileys"));
 import qrcode from "qrcode"
 import NodeCache from "node-cache"
@@ -51,7 +38,7 @@ let rtx2 = `╭━╴╶╴╶╴╶╴𖣘╶╴╶╴╶╴╶━╮
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const RubyJBOptions = {}
+const NagiJBOptions = {}
 if (global.conns instanceof Array) console.log()
 else global.conns = []
 
@@ -73,14 +60,14 @@ let pathRubyJadiBot = path.join(`./${jadi}/`, id)
 if (!fs.existsSync(pathRubyJadiBot)){
 fs.mkdirSync(pathRubyJadiBot, { recursive: true })
 }
-RubyJBOptions.pathRubyJadiBot = pathRubyJadiBot
-RubyJBOptions.m = m
-RubyJBOptions.conn = conn
-RubyJBOptions.args = args
-RubyJBOptions.usedPrefix = usedPrefix
-RubyJBOptions.command = command
-RubyJBOptions.fromCommand = true
-RubyJadiBot(RubyJBOptions)
+NagiJBOptions.pathNagiJadiBot = pathRubyJadiBot
+NagiJBOptions.m = m
+NagiJBOptions.conn = conn
+NagiJBOptions.args = args
+NagiJBOptions.usedPrefix = usedPrefix
+NagiJBOptions.command = command
+NagiJBOptions.fromCommand = true
+NagiJadiBot(NagiJBOptions)
 global.db.data.users[m.sender].Subs = new Date * 1
 } 
 handler.help = ['qr', 'code']
@@ -103,7 +90,7 @@ if (args[0] == "") args[0] = undefined
 }
 const pathCreds = path.join(pathRubyJadiBot, "creds.json")
 if (!fs.existsSync(pathRubyJadiBot)){
-fs.mkdirSync(pathRubyJadiBot, { recursive: true })}
+fs.mkdirSync(pathRubyJadiBot, { recursive: true )}
 try {
 args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
 } catch {
