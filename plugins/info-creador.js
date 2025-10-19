@@ -38,7 +38,7 @@ END:VCARD`;
 },
     message: {
       contactMessage: {
-        displayName: "𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐂𝐫𝐞𝐚𝐭𝐨𝐫𝐬",
+        displayName: "𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐂𝐫𝐞𝐚𝐭𝐨𝐫𝐬 🌿",
         vcard: vcard1
 }
 }
