@@ -31,11 +31,11 @@ global.getBuffer = async function getBuffer(url, options) {
 
 // Lista de iconos
 const iconUrls = [
-  "https://cdn.yupra.my.id/yp/2n8vbvel.png",
-  "https://cdn.yupra.my.id/yp/2n8vbvel.png",
-  "https://cdn.yupra.my.id/yp/2n8vbvel.png",
-  "https://cdn.yupra.my.id/yp/2n8vbvel.png",
-  "https://cdn.yupra.my.id/yp/2n8vbvel.png"
+  "https://adonixfiles.mywire.org/files/xzadonix_45.jpg",
+  "https://adonixfiles.mywire.org/files/xzadonix_45.jpg",
+  "https://adonixfiles.mywire.org/files/xzadonix_45.jpg",
+  "https://adonixfiles.mywire.org/files/xzadonix_45.jpg",
+  "https://adonixfiles.mywire.org/files/xzadonix_45.jpg"
 ]
 
 // Función para elegir y descargar un icono aleatorio
