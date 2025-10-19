@@ -17,7 +17,7 @@ global.owner = [
 // <-- Número @s.whatsapp.net -->
   ['5491156178758', 'Dev-fedexy ࣪🍂', true],
   ['5491124918653', 'Dev-fedexy ☕', true],
-  ['584264257867', 'Dev-fedexy 👻', true],
+  ['', '', false]
 ];
 
 
@@ -66,10 +66,29 @@ global.cn ='https://whatsapp.com/channel/';
 // catálogos- y channel id
 
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
-global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
-global.ch = {
-ch1: '120363402097425674@newsletter',
+
+global.estilo = {
+  key: {
+    fromMe: false,
+    participant: '0@s.whatsapp.net',
+...(false? { remoteJid: '5219992095479-1625305606@g.us'}: {})
+},
+  message: {
+    orderMessage: {
+      itemCount: -999999,
+      status: 1,
+      surface: 1,
+      message: packname, // Nombre del paquete o mensaje principal
+      orderTitle: 'Bang',
+      thumbnail: global.catalogo,
+      sellerJid: '0@s.whatsapp.net'
 }
+}
+};
+
+global.ch = {
+  ch1: '120363402097425674@newsletter'
+};
 
 // y esto es el final xd
 
