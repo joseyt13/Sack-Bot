@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix}) => {
     grupo: '𝙈𝙚𝙣𝙪 𝙂𝙧𝙪𝙥𝙤',
     ai: '𝙈𝙚𝙣𝙪 𝘼𝙄',
     game: '𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚',
-    jadibot: '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
+    serbot: '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
     main: '𝙈𝙚𝙣𝙪 𝙈𝙖𝙞𝙣',
     nable: '𝙈𝙚𝙣𝙪 𝙊𝙣 / 𝙊𝙛𝙛',
     nsfw: '𝙈𝙚𝙣𝙪 𝙉𝙎𝙁𝙒',
@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix}) => {
   let header = '*□ %category*'
   let body = '> ▪︎ %cmd'
   let footer = ''
-  let after = `🌿 Nagi-BotV1`
+  let after = `🌿 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀`
 
   let user = global.db.data.users[m.sender]
   let premium = user.premium? '✅ Sí': '❌ No'
