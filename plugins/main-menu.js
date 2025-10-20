@@ -84,7 +84,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
-    fileName: '🌿 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀',
+    fileName: '🍃 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀 | 𝐌𝐞𝐧𝐮 🌿',
     mimetype: 'application/pdf',
     caption: finalMenu,
     contextInfo: {
