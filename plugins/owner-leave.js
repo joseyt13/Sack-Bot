@@ -1,20 +1,16 @@
-let handler = async (m, { conn}) => {
-  if (!m.isGroup) throw '🌿 Este comando solo puede usarse en grupos.';
-  if (!global.owner.includes(m.sender)) throw '🍂 Solo el propietario del bot puede usar este comando.';
-
-  const groupMetadata = await conn.groupMetadata(m.chat);
-  const namebog = groupMetadata.subject;
-
-  await conn.sendMessage(m.chat, {
-    text: `*_🍃 Adiós, el bot se despide del grupo..._*`,
-});
-
-  await conn.groupLeave(m.chat);
-};
-
-handler.command = ['salir'];
-handler.tags = ['owner'];
-handler.help = ['salir'];
-handler.rowner = true;
-
-export default handler;
+let handler = async (m, { conn, text, command }) => {
+let id = text ? text : m.chat  
+let chat = global.db.data.chats[m.chat]
+chat.welcome = false
+await conn.reply(id, `🍂 *Adios el bot se despide del grupo._*`) 
+await conn.groupLeave(id)
+try {  
+chat.welcome = true
+} catch (e) {
+await m.reply(`${fg}`) 
+return console.log(e)
+}}
+handler.command = ['salir','leave']
+handler.group = true
+handler.rowner = true
+export default handler
