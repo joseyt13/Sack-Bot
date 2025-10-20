@@ -1,7 +1,6 @@
 ## Código creado por Dev-fedexyz, No quites los créditos xd 
 
 #!/data/data/com.termux/files/usr/bin/bash
-
 # Configuración
 BOT_DIR="Nagi-Bot"
 BOT_REPO="https://github.com/Dev-fedexyz13/$BOT_DIR"
