@@ -74,7 +74,7 @@ if (args[0] == "") args[0] = undefined
 }
 const pathCreds = path.join(pathNagiJadiBot, "creds.json")
 if (!fs.existsSync(pathNagiJadiBot)){
-fs.mkdirSync(pathNagiJadiBot, { recursive: true )}
+fs.mkdirSync(pathNagiJadiBot, { recursive: true});
 try {
 args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
 } catch {
