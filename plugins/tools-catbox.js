@@ -26,10 +26,10 @@ const handler = async (m, { conn}) => {
   if (!mime) return m.reply("🌿 *_Es necesario que envíes una imagen, vídeo, audio o gif.!_*", null, { quoted: fkontak});
   let media = await q.download();
   let link = await catbox(media);
-  let caption = `*C A T  B O X  - T O U R L:*
+  let caption = `🍃 *N A G I - C A T  B O X:*
 \`\`\`• ${link}\`\`\`
-📚 *Tamaño:* ${formatBytes(media.length)}
-📅 *Validez:* *"Sin fecha de caducidad"*
+📚 *_Tamaño:_* ${formatBytes(media.length)}
+📅 *_Validez:_* *"Sin fecha de caducidad"*
 `;
 
   const contextInfo = {
