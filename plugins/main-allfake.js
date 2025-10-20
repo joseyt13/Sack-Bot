@@ -88,7 +88,7 @@ global.emoji5 = '🌿'
 global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 
 //Espera
-global.wait = '🌿 Cargando...\n❝añ🍂 Aguarde uno minutos....❞';
+global.wait = '🌿 Cargando...\n❝🍂 Aguarde unos minutos....❞';
 
 //Enlaces
 var canal = 'https://whatsapp.com/channel/'
@@ -126,7 +126,7 @@ global.taguser = '@' + m.sender.split("@")[0]
 var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
-global.packsticker = `°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°\nᰔᩚ Usuario: ${nombre}\n❀ Bot: ${botname}\n✦ Fecha: ${fecha}\nⴵ Hora: ${tiempo}`;
+global.packsticker = `°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°\n🌿 Usuario: ${nombre}\n🍂 Bot: ${botname}\n🍃 Fecha: ${fecha}\n🍒 Hora: ${tiempo}`;
 
 // rcanaɭ con icono como buffer
 global.rcanal = {
