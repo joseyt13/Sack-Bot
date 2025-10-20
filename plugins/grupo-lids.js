@@ -5,7 +5,7 @@ const handler = async (m, { conn, text, args}) => {
   const id = `${number}@s.whatsapp.net`;
   const lid = `${Math.floor(Math.random() * 1e14)}@lid`;
 
-  const message = `📌 *ID:* ${id}\n🌿 *LID:* ${lid}`;
+  const message = `🍃 *_ID_:* ${id}\n🌿 *_LID:_* ${lid}`;
 
   await conn.reply(m.chat, message, m, {
     mentions: [mentioned]
