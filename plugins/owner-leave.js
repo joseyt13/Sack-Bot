@@ -6,7 +6,7 @@ let handler = async (m, { conn}) => {
   const namebog = groupMetadata.subject;
 
   await conn.sendMessage(m.chat, {
-    text: `*_🍃 Adiós, el bot se despide del grupo *${namebog}*..._*`,
+    text: `*_🍃 Adiós, el bot se despide del grupo..._*`,
 });
 
   await conn.groupLeave(m.chat);
