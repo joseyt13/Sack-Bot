@@ -11,7 +11,7 @@ import fs, {readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSy
 import yargs from 'yargs';
 import {spawn} from 'child_process'
 import lodash from 'lodash'
-import { RubyJadiBot } from './plugins/jadibot-serbot.js';
+import { NagiJadiBot } from './plugins/jadibot-serbot.js';
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
 import {tmpdir} from 'os'
@@ -37,9 +37,8 @@ const {CONNECTING} = ws
 const {chain} = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
-//const yuw = dirname(fileURLToPath(import.meta.url))
-//let require = createRequire(megu)
 let { say } = cfonts
+
 console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
 
 cfonts.say('NagiBot - MD, {
@@ -187,14 +186,14 @@ addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
 let codeBot = await conn.requestPairingCode(addNumber)
 codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`🍃 CÓDIGO DE VINCULACIÓN...`)), chalk.bold.white(chalk.white(codeBot)))
+console.log(chalk.bold.white(chalk.bgMagenta(`🍃 Codigo de vinculación...`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}
 }
 
 conn.isInit = false;
 conn.well = false;
-//conn.logger.info(`✦  H E C H O\n`)
+//conn.logger.info(`🌿  H E C H O\n`)
 
 if (!opts['test']) {
 if (global.db) setInterval(async () => {
@@ -217,7 +216,7 @@ global.timestamp.connect = new Date;
 if (global.db.data == null) loadDatabase();
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
-console.log(chalk.bold.yellow(`\n🍃 ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS`))}
+console.log(chalk.bold.yellow(`\n🍃 Escanea el qr  expira en 45 segundos...`))}
 }
 if (connection == 'open') {
 console.log(chalk.bold.green('\n🌿 Nagi-Bot Conectada con éxito..'))
@@ -295,7 +294,7 @@ return true
 
 global.rutaJadiBot = join(__dirname, './NagiJadiBots')
 
-if (global.RubyJadibts) {
+if (global.NagiJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
 console.log(chalk.bold.cyan(`La carpeta: ${jadi} se creó correctamente.`))
@@ -310,7 +309,7 @@ for (const gjbts of readRutaJadiBot) {
 const botPath = join(rutaJadiBot, gjbts)
 const readBotPath = readdirSync(botPath)
 if (readBotPath.includes(creds)) {
-RubyJadiBot({pathRubyJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
+NagiJadiBot({pathNagiJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
 }
 }
 }
