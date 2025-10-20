@@ -1,15 +1,13 @@
-import fs from 'fs';
 import axios from 'axios';
 import crypto from 'crypto';
 import { fileTypeFromBuffer} from 'file-type';
 
-const githubToken = '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';
-const owner = 'El-brayan502';
+const githubToken = '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';
+const owner = 'dev-fedexyz13';
 const branch = 'main';
+const repo = 'nagi-uploads'; // Puedes cambiar el nombre del repositorio
 
-let repos = ['fedexyz1', 'fedexyz2', 'fedexyz3', 'fedexyz4'];
-
-async function ensureRepoExists(repo) {
+async function ensureRepoExists() {
   try {
     await axios.get(`https://api.github.com/repos/${owner}/${repo}`, {
       headers: { Authorization: `Bearer ${githubToken}`}
@@ -20,38 +18,25 @@ async function ensureRepoExists(repo) {
         { name: repo, private: false},
         { headers: { Authorization: `Bearer ${githubToken}`}}
 );
-      if (!repos.includes(repo)) repos.push(repo);
 } else {
-      throw new Error(`Error al verificar o crear el repositorio: ${e.message}`);
+      throw new Error(`Error al verificar el repositorio: ${e.message}`);
 }
 }
-}
-
-function generateRepoName() {
-  return `dat-${crypto.randomBytes(3).toString('hex')}`;
 }
 
 async function uploadFile(buffer) {
   const detected = await fileTypeFromBuffer(buffer);
   const ext = detected?.ext || 'bin';
-  const code = crypto.randomBytes(3).toString('hex');
-  const fileName = `${code}-${Date.now()}.${ext}`;
-  const filePathGitHub = `uploads/${fileName}`;
+  const fileName = `${crypto.randomBytes(4).toString('hex')}.${ext}`;
+  const filePath = `uploads/${fileName}`;
   const base64Content = Buffer.from(buffer).toString('base64');
 
-  let targetRepo = repos[Math.floor(Math.random() * repos.length)];
-
-  try {
-    await ensureRepoExists(targetRepo);
-} catch {
-    targetRepo = generateRepoName();
-    await ensureRepoExists(targetRepo);
-}
+  await ensureRepoExists();
 
   await axios.put(
-    `https://api.github.com/repos/${owner}/${targetRepo}/contents/${filePathGitHub}`,
+    `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`,
     {
-      message: `Upload file ${fileName}`,
+      message: `Upload ${fileName}`,
       content: base64Content,
       branch
 },
@@ -60,19 +45,16 @@ async function uploadFile(buffer) {
 }
 );
 
-  return `https://raw.githubusercontent.com/${owner}/${targetRepo}/${branch}/${filePathGitHub}`;
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${filePath}`;
 }
 
 const handler = async (m, { conn}) => {
   try {
     const q = m.quoted || m;
     const mime = (q.msg || q).mimetype || '';
+    if (!mime) return m.reply('⚠️ Responde a un archivo para subirlo.');
 
-    if (!mime) {
-      return m.reply('⚠️ Por favor, responde a un archivo para subirlo a GitHub.');
-}
-
-    await m.reply('🍂 *_Subiendo archivo a GitHub..._*');
+    await m.reply('🍂 Subiendo archivo a GitHub...');
 
     const buffer = await q.download();
     const url = await uploadFile(buffer);
@@ -80,7 +62,7 @@ const handler = async (m, { conn}) => {
     await m.reply(`🌿 Archivo subido con éxito:\n${url}`);
 } catch (e) {
     console.error('[GitHub Upload Error]', e);
-    await m.reply(`❌ Ocurrió un error al subir el archivo:\n${e.message}`);
+    await m.reply(`❌ Error al subir el archivo:\n${e.message}`);
 }
 };
 
