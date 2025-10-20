@@ -5,17 +5,16 @@ const handler = async (m, { conn, text, args}) => {
   const id = `${number}@s.whatsapp.net`;
   const lid = `${Math.floor(Math.random() * 1e14)}@lid`;
 
-  const message = `📌 *ID:* ${id}
-🌿 *LID:* ${lid}`;
+  const message = `📌 *ID:* ${id}\n🌿 *LID:* ${lid}`;
 
   await conn.reply(m.chat, message, m, {
     mentions: [mentioned]
 });
 };
 
-handler.command = ['lid']:
+handler.command = ['lid'];
 handler.help = ['.lid'];
 handler.tags = ['grupo'];
-handler.register = true
+handler.register = true;
 
 export default handler;
