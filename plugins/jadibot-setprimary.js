@@ -34,7 +34,7 @@ let handler = async (m, { conn, text}) => {
 handler.help = ['setprimary <número>']
 handler.tags = ['owner', 'group']
 handler.command = ['setprimary']
-handler.admin = true
+handler.rowner = true
 handler.group = true
 
 export default handler
