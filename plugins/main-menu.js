@@ -22,10 +22,10 @@ let handler = async (m, { conn, usedPrefix}) => {
     tools: '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
 }
 
-  let header = '*□ %category*'
+  let header = '*> ┌──「 %category 」*'
   let body = '> ▪︎ %cmd'
   let footer = ''
-  let after = `🌿 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀`
+  let after = `🌿 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 © 𝐝𝐞𝐯-𝐟𝐞𝐝𝐞𝐱𝐲𝐳 𝟐𝟎𝟐𝟓`
 
   let user = global.db.data.users[m.sender]
   let premium = user.premium? '✅ Sí': '❌ No'
@@ -84,7 +84,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
-    fileName: '🌿 Nagi-BotV1',
+    fileName: '🌿 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀',
     mimetype: 'application/pdf',
     caption: finalMenu,
     contextInfo: {
