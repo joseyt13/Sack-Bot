@@ -42,7 +42,7 @@ let { say } = cfonts
 
 console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
 
-cfonts.say('NagiBot - MD, {
+cfonts.say('NagiBot - MD', {
   font: 'chrome',
   align: 'center',
   gradient: ['#ff4fcb', '#ff77ff'],
