@@ -60,7 +60,6 @@ handler.register = true
 
 export default handler 
 
-
 export async function NagiJadiBot(options) {
 let { pathNagiJadiBot, m, conn, args, usedPrefix, command } = options
 if (command === 'code') {
