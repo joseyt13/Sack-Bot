@@ -13,19 +13,19 @@ let handler = async (m, { conn, usedPrefix}) => {
     grupo: '𝙈𝙚𝙣𝙪 𝙂𝙧𝙪𝙥𝙤',
     ai: '𝙈𝙚𝙣𝙪 𝘼𝙄',
     game: '𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚',
-    serbot: '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
+    jadibot: '𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞𝘽𝙤𝙩',
     main: '𝙈𝙚𝙣𝙪 𝙈𝙖𝙞𝙣',
     nable: '𝙈𝙚𝙣𝙪 𝙊𝙣 / 𝙊𝙛𝙛',
     nsfw: '𝙈𝙚𝙣𝙪 𝙉𝙎𝙁𝙒',
     owner: '𝙈𝙚𝙣𝙪 𝙊𝙬𝙣𝙚𝙧',
-    stickers: '𝙈𝙚𝙣𝙪 𝙎𝙩𝙞𝙘𝙠𝙚𝙧',
+    sticker: '𝙈𝙚𝙣𝙪 𝙎𝙩𝙞𝙘𝙠𝙚𝙧',
     tools: '𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨',
 }
 
-  let header = '*_□ %category_*'
-  let body = '> ▪︎ *%cmd*'
+  let header = '*□ %category*'
+  let body = '> ▪︎ %cmd'
   let footer = ''
-  let after = `🌿 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀`
+  let after = `🌿 Nagi-BotV1`
 
   let user = global.db.data.users[m.sender]
   let premium = user.premium? '✅ Sí': '❌ No'
@@ -92,7 +92,7 @@ let handler = async (m, { conn, usedPrefix}) => {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363402097425674@newsletter',
-        newsletterName: '𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀'
+        newsletterName: 'Nagi-BotV1'
 },
       externalAdReply: {
         title: '© Made By Dev-fedexyz 🌿',
@@ -109,7 +109,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú'']
+handler.command = ['menu', 'help', 'menú', 'allmenu', 'menucompleto']
 handler.register = true
 
 export default handler
