@@ -35,28 +35,30 @@ export async function before(m) {
     if (!user.commands) user.commands = 0;
     user.commands += 1;
 
-    const contextInfo = {
-      mentionedJid: [m.sender],
-      isForwarded: true,
-      forwardingScore: 999,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid,
-        newsletterName,
-        serverMessageId: -1,
+    if (m) {
+      const contextInfo = {
+        mentionedJid: [m.sender],
+        isForwarded: true,
+        forwardingScore: 999,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid,
+          newsletterName,
+          serverMessageId: -1,
 },
-      externalAdReply: {
-        title: packname,
-        body: `🌿 Hola, ${m.pushName || 'usuario'}!`,
-        thumbnailUrl: getRandomIcono(),
-        sourceUrl: redes,
-        mediaType: 1,
-        renderLargerThumbnail: false,
+        externalAdReply: {
+          title: packname,
+          body: `🌿 Hola, ${m.pushName || 'usuario'}!`,
+          thumbnailUrl: getRandomIcono(),
+          sourceUrl: redes,
+          mediaType: 1,
+          renderLargerThumbnail: false,
 }
 };
 
-    m.contextInfo = contextInfo;
+      m.contextInfo = contextInfo;
+}
+
 } else {
-    const comando = m.text.trim().split(' ')[0];
-    await m.reply(`🌿 El comando *${comando}* no está disponible.`);
+    await m.reply(`🍃 *El comando no está disponible...* m, rcanal');`);
 }
 }
