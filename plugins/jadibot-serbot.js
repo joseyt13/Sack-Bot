@@ -17,8 +17,8 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz"
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
-let rtx = "`
-let rtx2 = "'
+let rtx = "'
+let rtx2 = ",
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
