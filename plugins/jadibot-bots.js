@@ -22,21 +22,21 @@ const handler = async (m, { conn, command, usedPrefix}) => {
 
       if (!existsSync(dirPath)) {
         await conn.sendMessage(m.chat, {
-          text: `No hay sesión activa para eliminar.\n\nUsa *${usedPrefix}qr* para crear una nueva.`,
+          text: `🌿 No hay sesión activa para eliminar.\n\nUsa *${usedPrefix}qr* para crear una nueva.`,
 }, { quoted: m});
         return;
 }
 
       if (global.conn.user.jid!== conn.user.jid) {
         await conn.sendMessage(m.chat, {
-          text: `Solo el bot principal puede ejecutar este comando.\n\nContacto: wa.me/${global.conn.user.jid.split('@')[0]}`,
+          text: `🍂 Solo el bot principal puede ejecutar este comando.\n\nContacto: wa.me/${global.conn.user.jid.split('@')[0]}`,
 }, { quoted: m});
         return;
 }
 
       rmSync(dirPath, { recursive: true, force: true});
       await conn.sendMessage(m.chat, {
-        text: `Sesión eliminada correctamente.`,
+        text: `🍃 Sesión eliminada correctamente.`,
 }, { quoted: m});
 }
 
@@ -70,5 +70,6 @@ const handler = async (m, { conn, command, usedPrefix}) => {
 handler.tags = ['serbot'];
 handler.help = ['deletebot', 'delcode', 'bots'];
 handler.command = ['deletebot', 'delcode', 'bots'];
+handler.register = true
 
 export default handler;
