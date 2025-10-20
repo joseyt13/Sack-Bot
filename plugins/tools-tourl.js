@@ -2,7 +2,7 @@ import axios from 'axios';
 import crypto from 'crypto';
 import { fileTypeFromBuffer} from 'file-type';
 
-const githubToken = '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';
+const githubToken = 'pat_11BWODFPA02Aq6OOefG2nh_jsTs9vDAUK1xDqjarQEv9epZ3c6Pf2rsjEZfoGy8ddV4ISYC3XM52cQMHc4';
 const owner = 'dev-fedexyz13';
 const branch = 'main';
 const repo = 'nagi-uploads'; // Puedes cambiar el nombre del repositorio
