@@ -9,28 +9,28 @@ let handler = async (message, { conn, usedPrefix, command}) => {
 
   const mime = message.quoted.mimetype || '';
   if (!/image\/(jpe?g|png|webp)/.test(mime)) {
-    return conn.reply(rcanal, 'El archivo debe ser una imagen válida (jpg, png, webp).', message);
+    return conn.reply(rcanal, '⚠️ El archivo debe ser una imagen válida (jpg, png, webp).', message);
 }
 
-  conn.reply(rcanal, '*🍃 _creando su sticker espere..._*', message, rcanal);
+  conn.reply(rcanal, '*🍃 _Creando su sticker, espere..._*', message, rcanal);
 
   try {
     const media = await message.quoted.download();
     const stickerBuffer = await sticker(media, false, {
-      packname: 'Stickers',
-      author: 'Bot'
+      packname: global.packsticker?.packname || 'Stickers',
+      author: global.packsticker?.author || 'Bot'
 });
 
     await conn.sendFile(rcanal, stickerBuffer, 'sticker.webp', '', message, { asSticker: true});
 } catch (error) {
     console.error(error);
-    conn.reply(rcanal, 'Ocurrió un error al crear el sticker.', message);
+    conn.reply(rcanal, '❌ Ocurrió un error al crear el sticker.', message);
 }
 };
 
 handler.help = ['sticker'];
 handler.tags = ['sticker'];
 handler.command = ['sticker', 's'];
-handler.register = true
+handler.register = true;
 
 export default handler;
