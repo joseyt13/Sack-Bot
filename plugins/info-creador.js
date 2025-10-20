@@ -1,12 +1,11 @@
 let handler = async (m, { conn}) => {
-  // 🧾 Contacto 1: Marck UwU
   const vcard1 = `BEGIN:VCARD
 VERSION:3.0
 FN:ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🌿
 ORG:ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🍃
 TITLE:Metatron Executioner of Michael
 EMAIL;type=INTERNET:brayanfree881@gmail.com
-TEL;type=CELL;waid=549115617858:+549115617858
+TEL;type=CELL;waid=5491156178758:+5491156178658
 ADR;type=WORK:;;2-chōme-7-5 Fuchūchō;marck;Osaka;594-0071;Japan
 URL;type=WORK:https://www.tiktok.com/@fantom_uwu_330
 X-WA-BIZ-NAME:𝑴𝒂𝒓𝒄𝒌 𝑼𝒘𝒖
@@ -14,7 +13,6 @@ X-WA-BIZ-DESCRIPTION:𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐛𝐲 𝑫𝒆𝒗-𝒉�
 X-WA-BIZ-HOURS:Mo-Su 00:00-23:59
 END:VCARD`;
 
-  // 🧾 Contacto 2: Hashirama Dev
   const vcard2 = `BEGIN:VCARD
 VERSION:3.0
 FN:ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🌿
@@ -29,7 +27,6 @@ X-WA-BIZ-DESCRIPTION:𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐛𝐲 𝑯𝒂𝒔𝒉𝒊
 X-WA-BIZ-HOURS:Mo-Su 00:00-23:59
 END:VCARD`;
 
-  // 📌 Mensaje falso para citar
   const qkontak = {
     key: {
       fromMe: false,
@@ -44,10 +41,9 @@ END:VCARD`;
 }
 };
 
-  // 📤 Enviar contactos
   await conn.sendMessage(m.chat, {
     contacts: {
-      displayName: '𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐂𝐫𝐞𝐚𝐭𝐨𝐫𝐬',
+      displayName: '𝑵𝒂𝒈𝒊-𝑩𝒐𝒕 𝐂𝐫𝐞𝐚𝐭𝐨𝐫𝐬 🍃',
       contacts: [
         { vcard: vcard1},
         { vcard: vcard2}
