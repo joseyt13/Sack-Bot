@@ -59,6 +59,6 @@ export async function before(m) {
 }
 
 } else {
-    await m.reply(`🍃 *El comando no está disponible...* m, rcanal');`);
+    await m.reply(`🍃 *El comando no está disponible...');
 }
 }
