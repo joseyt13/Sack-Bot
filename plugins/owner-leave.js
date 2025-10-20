@@ -9,7 +9,7 @@ let handler = async (m, { conn, command}) => {
   const namebog = groupMetadata.subject;
 
   await conn.sendMessage(m.chat, {
-    text: `🌿 Adiós *${botname}*, se despide....`,
+    text: `*_🌿 Adiós el bot se despide..._*`,
 });
 
   await conn.groupLeave(m.chat);
