@@ -31,6 +31,15 @@ export async function before(m) {
 
 } else {
     const comando = m.text.trim().split(' ')[0];
+    const rcanal = {
+      key: {
+        remoteJid: m.chat,
+        fromMe: false,
+        id: m.id
+},
+      message: m.message
+};
+
     await m.reply(`🌿 _El comando *${comando}* no está disponible..._`, m, rcanal);
 }
 }
