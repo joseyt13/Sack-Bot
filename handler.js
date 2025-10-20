@@ -36,7 +36,7 @@ return
 if (m.isGroup) {
 const chat = global.db.data.chats[m.chat];
 if (chat?.primaryBot) {
-const universalWords = ['resetbot', 'resetprimario', 'botreset'];
+const universalWords = ['resetbot', 'reset'];
 const firstWord = m.text ? m.text.trim().split(' ')[0].toLowerCase().replace(/^[./#]/, '') : '';
 
 if (!universalWords.includes(firstWord)) {
