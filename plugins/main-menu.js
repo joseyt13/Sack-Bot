@@ -92,7 +92,7 @@ let handler = async (m, { conn, usedPrefix}) => {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363402097425674@newsletter',
-        newsletterName: 'Nagi-BotV1'
+        newsletterName: '𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀'
 },
       externalAdReply: {
         title: '© Made By Dev-fedexyz 🌿',
@@ -109,7 +109,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú', 'allmenu', 'menucompleto']
+handler.command = ['menu', 'help', 'menú']
 handler.register = true
 
 export default handler
