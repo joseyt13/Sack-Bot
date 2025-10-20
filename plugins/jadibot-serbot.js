@@ -82,6 +82,7 @@ args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSO
 conn.reply(m.chat, `${emoji} Use correctamente el comando » ${usedPrefix + command} code`, m)
 return
 }
+}
 
 const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, "base64")
 exec(comb.toString("utf-8"), async (err, stdout, stderr) => {
@@ -272,7 +273,8 @@ creloadHandler(false)
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));}
+return new Promise(resolve => setTimeout(resolve, ms));
+}
 function msToTime(duration) {
 var milliseconds = parseInt((duration % 1000) / 100),
 seconds = Math.floor((duration / 1000) % 60),
@@ -287,5 +289,5 @@ return minutes + ' m y ' + seconds + ' s '
 async function joinChannels(conn) {
   for (const channelId of Object.values(global.ch)) {
     await conn.newsletterFollow(channelId).catch(() => {});
-}
-}
+  }
+                         }
