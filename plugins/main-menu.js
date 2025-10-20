@@ -80,7 +80,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
-  let imagen = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg'
+  let imagen = 'https://files.catbox.moe/18qri6.jpg'
 
   await m.react('⚽')
 
