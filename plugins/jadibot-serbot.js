@@ -39,11 +39,11 @@ return m.reply(`${emoji2} Se ha alcanzado o superado el límite de *Sub-Bots* ac
 
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-let pathRubyJadiBot = path.join(`./${jadi}/`, id)
-if (!fs.existsSync(pathRubyJadiBot)){
-fs.mkdirSync(pathRubyJadiBot, { recursive: true })
+let pathNagiJadiBot = path.join(`./${jadi}/`, id)
+if (!fs.existsSync(pathNagiJadiBot)){
+fs.mkdirSync(pathNagiJadiBot, { recursive: true })
 }
-NagiJBOptions.pathNagiJadiBot = pathRubyJadiBot
+NagiJBOptions.pathNagiJadiBot = pathNagiJadiBot
 NagiJBOptions.m = m
 NagiJBOptions.conn = conn
 NagiJBOptions.args = args
@@ -59,8 +59,8 @@ handler.command = ['qr', 'code']
 export default handler 
 
 
-export async function RubyJadiBot(options) {
-let { pathRubyJadiBot, m, conn, args, usedPrefix, command } = options
+export async function NagiJadiBot(options) {
+let { pathNagiJadiBot, m, conn, args, usedPrefix, command } = options
 if (command === 'code') {
 command = 'qr'; 
 args.unshift('code')}
@@ -71,9 +71,9 @@ args[0] = args[0].replace(/^--code$|^code$/, "").trim()
 if (args[1]) args[1] = args[1].replace(/^--code$|^code$/, "").trim()
 if (args[0] == "") args[0] = undefined
 }
-const pathCreds = path.join(pathRubyJadiBot, "creds.json")
-if (!fs.existsSync(pathRubyJadiBot)){
-fs.mkdirSync(pathRubyJadiBot, { recursive: true )}
+const pathCreds = path.join(pathNagiJadiBot, "creds.json")
+if (!fs.existsSync(pathNagiJadiBot)){
+fs.mkdirSync(pathNagiJadiBot, { recursive: true )}
 try {
 args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
 } catch {
@@ -88,7 +88,7 @@ const drmer = Buffer.from(drm1 + drm2, `base64`)
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState(pathRubyJadiBot)
+const { state, saveState, saveCreds } = await useMultiFileAuthState(pathNagiJadiBot)
 
 const connectionOptions = {
 logger: pino({ level: "fatal" }),
@@ -96,7 +96,7 @@ printQRInTerminal: false,
 auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})) },
 msgRetry,
 msgRetryCache,
-browser: mcode ? ['Ubuntu', 'Chrome', '110.0.5585.95'] : ['Ruby Hoshino (Sub Bot)', 'Chrome','2.0.0'],
+browser: mcode ? ['Ubuntu', 'Chrome', '110.0.5585.95'] : ['Nagi Bot (Sub Bot)', 'Chrome','2.0.0'],
 version: version,
 generateHighQualityLinkPreview: true
 };
