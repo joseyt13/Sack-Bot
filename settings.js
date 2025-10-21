@@ -59,7 +59,7 @@ global.gp1 = 'https://chat.whatsapp.com/BeFAyDGgDIR7e1kEkdFs8d?mode=wwt'
 global.comunidad1 = 'https://chat.whatsapp.com/BeFAyDGgDIR7e1kEkdFs8d?mode=wwt'
 global.channel = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
 global.channel2 = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
-global.md = 'https://github.com'
+global.md = 'https://github.com/dev-fedexyz13'
 global.correo = 'fedelanyt20@gmail.com'
 global.cn ='https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y';
 
