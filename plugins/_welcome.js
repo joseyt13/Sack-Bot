@@ -39,7 +39,7 @@ async function generarBienvenida({ conn, userId, groupMetadata, chat}) {
     caption = `👋 ¡Hola ${username}!
 Bienvenid@ al grupo *${groupMetadata.subject}*.
 
-Esperamos que disfrutes tu estadía.
+🍃 *_Esperamos que disfrutes tu estadía._*
 
 📌 Información del grupo:
 • Miembros: ${groupSize}
@@ -71,7 +71,7 @@ async function generarDespedida({ conn, userId, groupMetadata, chat}) {
 } else {
     caption = `👋 ${username} ha salido del grupo *${groupMetadata.subject}*.
 
-Esperamos que haya disfrutado su tiempo con nosotros.
+🍃 *_Esperamos que haya disfrutado su tiempo con nosotros._*
 
 📉 Estado actual:
 • Miembros: ${groupSize}
