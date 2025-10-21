@@ -6,11 +6,11 @@ const newsletterName = '🍃 Nagi-BotV1| Channel Official'
 const packname = '© Made By dev-fedexyz'
 
 const iconos = [
-  'https://qu.ax/wwbar.jpg',
-  'https://qu.ax/JSgSc.jpg',
-  'https://qu.ax/FUXJo.jpg',
-  'https://qu.ax/qhKUf.jpg',
-  'https://qu.ax/mZKgt.jpg'
+  'https://files.catbox.moe/18qri6.jpg',
+  'https://files.catbox.moe/60z2ix.jpg',
+  'https://files.catbox.moe/18qri6.jpg',
+  'https://files.catbox.moe/60z2ix.jpg',
+  'https://files.catbox.moe/18qri6.jpg'
 ]
 
 const getRandomIcono = () => iconos[Math.floor(Math.random() * iconos.length)]
