@@ -224,7 +224,7 @@ await joinChannels(sock)
 if (m?.chat) {
   const mensaje = args[0]
 ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...`
-: `@${m.sender.split('@')[0]}, 🌿 Genial, ya eres parte de nuestra familia de Sub-Bots.`
+: `@${m.sender.split('@')[0]}, 🌿 Genial ya eres parte de la familia Sub-Bots.`
 
   await conn.sendMessage(
     m.chat,
@@ -234,11 +234,11 @@ if (m?.chat) {
 
   await conn.reply(
     m.chat,
-    '🌿 Conexión establecida correctamente.',
+    '.',
     m,
     global.rcanal
 )
-    }
+}
     
 }}
 setInterval(async () => {
