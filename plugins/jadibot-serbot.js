@@ -222,9 +222,10 @@ global.conns.push(sock)
 await joinChannels(sock)
 
 if (m?.chat) {
+  const usuario = `@${m.sender.split('@')[0]}`
   const mensaje = args[0]
-? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...`
-: `@${m.sender.split('@')[0]}, 🌿 Genial ya eres parte de la familia Sub-Bots.`
+? `${usuario}, ya estás conectado, leyendo mensajes entrantes...`
+: `${usuario}, 🌿 Genial, ya eres parte de la familia Sub-Bots.`
 
   await conn.sendMessage(
     m.chat,
@@ -234,7 +235,7 @@ if (m?.chat) {
 
   await conn.reply(
     m.chat,
-    ',',
+    '.',
     m,
     global.rcanal
 )
