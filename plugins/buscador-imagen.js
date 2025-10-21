@@ -30,7 +30,7 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
   await conn.sendCarousel(
     m.chat,
     `🖼️ Resultados de: *${text}*`,
-    '🍂 𝑵𝒂𝒈𝒊 - 𝑩𝒖𝒔𝒄𝒂𝒅𝒐𝒓 🍃',
+    '🍂 Nagi - Buscador 🍃',
     null,
     messages,
     m
