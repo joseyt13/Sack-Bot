@@ -234,7 +234,7 @@ if (m?.chat) {
 
   await conn.reply(
     m.chat,
-    '.',
+    ',',
     m,
     global.rcanal
 )
