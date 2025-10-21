@@ -91,10 +91,10 @@ global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 global.wait = '🌿 Cargando...\n❝🍂 Aguarde unos minutos....❞';
 
 //Enlaces
-var canal = 'https://whatsapp.com/channel/'
-let canal2 = 'https://whatsapp.com/channel/'
-var git = 'https://github.com/'
-var github = 'https://github.com/' 
+var canal = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
+let canal2 = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
+var git = 'https://github.com/dev-fedexyz13/Nagi-Bot.git'
+var github = 'https://github.com/dev-fedexyz13'
 let correo = 'fedelanyt20@gmail.com'
 global.redes = [canal, canal2, git, github, correo].getRandom()
 
