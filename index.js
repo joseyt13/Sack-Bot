@@ -39,7 +39,19 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 
-console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
+const chalk = require('chalk');
+
+let frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+let i = 0;
+
+const loading = setInterval(() => {
+  process.stdout.write('\r' + chalk.cyanBright(`Cargando ${frames[i++ % frames.length]} `));
+}, 100);
+
+setTimeout(() => {
+  clearInterval(loading);
+  console.log('\n' + chalk.greenBright('✅ Carga completada'));
+}, 3000);
 
 cfonts.say('NagiBot - MD', {
   font: 'chrome',
@@ -56,10 +68,9 @@ cfonts.say('created by Dev-fedexyz', {
 })
 
 console.log(chalk.cyanBright('\n╭─────────────── Nagi-BotV1 ────────────────╮'));
-console.log(chalk.whiteBright('│ 🌿  Estado: iniciado correctamente         │'));
-console.log(chalk.whiteBright('│ 👤  Creador: Dev-fedexyz                   │'));
-console.log(chalk.whiteBright('│ 🌐  GitHub: github.com/Dev-fedexyz13       │'));
-console.log(chalk.whiteBright('│ 📞  Contacto: wa.me/5491156178748          │'));
+console.log(chalk.whiteBright('│ 🌿  ESTADO: iniciado correctamente         │'));
+console.log(chalk.whiteBright('│ 🍃  CREADOR: Dev-fedexyz                   │'));
+console.log(chalk.whiteBright('│ 🍂  GITHUB: github.com/Dev-fedexyz13       │'));
 console.log(chalk.cyanBright('╰───────────────────────────────────────────╯\n'));
 
 protoType()
