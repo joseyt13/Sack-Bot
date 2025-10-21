@@ -55,13 +55,13 @@ global.avatar = 'https://qu.ax/030303jjpeg'
 
 // Contacto  - y canales
 
-global.gp1 = 'https://chat.whatsapp.com/'
-global.comunidad1 = 'https://chat.whatsapp.com/'
-global.channel = 'https://whatsapp.com/channel/'
-global.channel2 = 'https://whatsapp.com/channel/'
+global.gp1 = 'https://chat.whatsapp.com/BeFAyDGgDIR7e1kEkdFs8d?mode=wwt'
+global.comunidad1 = 'https://chat.whatsapp.com/BeFAyDGgDIR7e1kEkdFs8d?mode=wwt'
+global.channel = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
+global.channel2 = 'https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y'
 global.md = 'https://github.com'
 global.correo = 'fedelanyt20@gmail.com'
-global.cn ='https://whatsapp.com/channel/';
+global.cn ='https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y';
 
 // catálogos- y channel id
 
@@ -87,7 +87,7 @@ global.estilo = {
 };
 
 global.ch = {
-  ch1: '120363402097425674@newsletter'
+  ch1: '120363405641626756@newsletter'
 };
 
 // y esto es el final xd
