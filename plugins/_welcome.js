@@ -3,7 +3,7 @@ import { WAMessageStubType} from '@whiskeysockets/baileys'
 
 const newsletterJid = '120363405641626756@newsletter'
 const newsletterName = '🍃 Nagi-BotV1| Channel Official'
-const packname = 'Ruby Hoshino Bot'
+const packname = '© Made By dev-fedexyz'
 
 const iconos = [
   'https://qu.ax/wwbar.jpg',
