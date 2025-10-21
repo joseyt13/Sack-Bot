@@ -1,56 +1,52 @@
 import { sticker} from '../lib/sticker.js';
 
-let handler = async (message, { conn, usedPrefix, command}) => {
-  const rcanal = message.chat;
+const handler = async (m, { conn, args}) => {
+  let stiker = false
+  const userId = m.sender
+  const userData = global.db.data.users[userId] || {}
 
-  if (!message.quoted ||!message.quoted.fileSha256) {
-    return conn.reply(rcanal, '🌿 Debes responder a una imagen para convertirla en sticker.', message);
-}
-
-  const mime = message.quoted.mimetype || '';
-  if (!/image\/(jpe?g|png|webp)/.test(mime)) {
-    return conn.reply(rcanal, '⚠️ El archivo debe ser una imagen válida (jpg, png, webp).', message);
-}
-
-  conn.reply(rcanal, '*🍃 _Creando su sticker, espere..._*', message, rcanal);
+  const texto1 = userData.text1 || global.packsticker
+  const texto2 = userData.text2 || global.packsticker2
 
   try {
-    const botname = global.botname || 'NagiBot';
+    const q = m.quoted || m
+    const mime = (q.msg || q).mimetype || q.mediaType || ''
+    const txt = args.join(' ')
+    const marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
 
-    global.packsticker = '🌿 NagiBot-IA by Dev-fedexyz 🍃';
+    if (/webp|image|video/.test(mime) && q.download) {
+      if (/video/.test(mime) && (q.msg || q).seconds> 16) {
+        return conn.reply(m.chat, '🍃 *_El video no puede durar más de 15 segundos para crear un sticker._*', m, global.rcanal)
+}
 
-    const vcard1 = `BEGIN:VCARD\nVERSION:3.0\nFN:${botname}\nORG:NagiBot\nTEL;type=CELL;type=VOICE;waid=0:0\nEND:VCARD`;
+      const buffer = await q.download()
+      await m.react('🌿')
+      stiker = await sticker(buffer, false, marca[0], marca[1])
 
-    const qkontak = {
-      key: {
-        fromMe: false,
-        participant: "0@s.whatsapp.net",
-        remoteJid: "status@broadcast"
-},
-      message: {
-        contactMessage: {
-          displayName: "𝑵𝒂𝒈𝒊𝑩𝒐𝒕 - 𝒔𝒕𝒊𝒄𝒌𝒆𝒓𝒔 🍃",
-          vcard: vcard1
+} else if (args[0] && isUrl(args[0])) {
+      stiker = await sticker(false, args[0], texto1, texto2)
+
+} else {
+      return conn.reply(m.chat, '🌿 Por favor, envía una *imagen* o *video* para crear su sticker.', m, global.rcanal)
+}
+
+} catch (e) {
+    await conn.reply(m.chat, `🍃 Ocurrió un error:\n*${e.message}*`, m, global.rcanal)
+    await m.react('🍂')
+} finally {
+    if (stiker) {
+      await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+      await m.react('🍃')
 }
 }
-};
-
-    const media = await message.quoted.download();
-    const stickerBuffer = await sticker(media, false, {
-      packname: global.packsticker,
-      author: botname
-});
-
-    await conn.sendFile(rcanal, stickerBuffer, 'sticker.webp', '', qkontak, { asSticker: true});
-} catch (error) {
-    console.error(error);
-    conn.reply(rcanal, '❌ Ocurrió un error al crear el sticker.', message);
 }
-};
 
-handler.help = ['sticker'];
-handler.tags = ['sticker'];
-handler.command = ['sticker', 's'];
-handler.register = true;
+handler.help = ['sticker']
+handler.tags = ['sticker']
+handler.command = ['s', 'sticker']
 
-export default handler;
+export default handler
+
+const isUrl = (text) => {
+  return /^https?:\/\/.+\.(jpe?g|gif|png|webp)$/i.test(text)
+}
