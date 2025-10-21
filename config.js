@@ -39,6 +39,14 @@ global.NagiJadibts = true
 
 // Nombre bot - Y más
 
+global.packsticker = `✦•────────────•✦
+👤 𝙐𝙨𝙪𝙖𝙧𝙞𝙤: ${nombre}
+🤖 𝘽𝙤𝙩: ${botname}
+📆 𝙁𝙚𝙘𝙝𝙖: ${fecha}
+⏰ 𝙃𝙤𝙧𝙖: ${tiempo}
+✦•────────────•✦`
+
+global.packsticker2 = `✧ 𝘿𝙚𝙫-𝙛𝙚𝙙𝙚𝙭𝙮𝙯 ✧`
 global.packname = 'Nagi-BotV1  🌿'
 global.botname = '⚽ Nagi - Bot 🍂'
 global.wm = 'NagiBot - MD ⚽'
