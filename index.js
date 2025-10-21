@@ -37,22 +37,11 @@ const {CONNECTING} = ws
 const {chain} = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
-let { say} = cfonts
+let { say } = cfonts
 
-// Animación de carga tipo spinner
-const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
-let i = 0
+console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
 
-const loading = setInterval(() => {
-  process.stdout.write('\r' + chalk.magentaBright(`🍂 Iniciando ${frames[i++ % frames.length]} `))
-}, 100)
-
-setTimeout(() => {
-  clearInterval(loading)
-  process.stdout.write('\r' + chalk.greenBright('✅ NagiBot iniciado correctamente\n\n'))
-
-  // Banner principal
-  cfonts.say('NagiBot - MD', {
+cfonts.say('NagiBot - MD', {
   font: 'chrome',
   align: 'center',
   gradient: ['#ff4fcb', '#ff77ff'],
@@ -65,17 +54,15 @@ cfonts.say('created by Dev-fedexyz', {
   align: 'center',
   colors: ['blueBright']
 })
-  // Panel de estado
-  console.log(chalk.cyanBright('\n╭─────────────── Nagi-BotV1 ────────────────╮'))
-  console.log(chalk.whiteBright('│ 🌿  ESTADO: iniciado correctamente         │'))
-  console.log(chalk.whiteBright('│ 🍃  CREADOR: Dev-fedexyz                   │'))
-  console.log(chalk.whiteBright('│ 🍂  GITHUB: github.com/Dev-fedexyz13       │'))
-  console.log(chalk.cyanBright('╰───────────────────────────────────────────╯\n'))
 
-  protoType()
-  serialize()
+console.log(chalk.cyanBright('\n╭─────────────── Nagi-BotV1 ────────────────╮'));
+console.log(chalk.whiteBright('│ 🌿  ESTADO: iniciado correctamente         │'));
+console.log(chalk.whiteBright('│ 🍃  CREADOR: Dev-fedexyz                   │'));
+console.log(chalk.whiteBright('│ 🍂  GITHUB: github.com/Dev-fedexyz13       │'));
+console.log(chalk.cyanBright('╰───────────────────────────────────────────╯\n'));
 
-}, 3000)
+protoType()
+serialize()
 
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
 return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString();
