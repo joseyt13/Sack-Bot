@@ -3,7 +3,7 @@ import { WAMessageStubType} from '@whiskeysockets/baileys'
 
 const newsletterJid = '120363405641626756@newsletter'
 const newsletterName = '🍃 Nagi-BotV1| Channel Official'
-const packname = '© Made By dev-fedexyz'
+const packname = '🄽🄰🄶🄸🄱🄾🅃‐🄼🄳'
 
 const iconos = [
   'https://files.catbox.moe/18qri6.jpg',
@@ -18,7 +18,7 @@ const getRandomIcono = () => iconos[Math.floor(Math.random() * iconos.length)]
 async function generarBienvenida({ conn, userId, groupMetadata, chat}) {
   const username = `@${userId.split('@')[0]}`
   const pp = await conn.profilePictureUrl(userId, 'image').catch(() =>
-    'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg'
+    'https://files.catbox.moe/60z2ix.jpg'
 )
   const fecha = new Date().toLocaleDateString('es-ES', {
     timeZone: 'America/Santo_Domingo',
@@ -53,7 +53,7 @@ Esperamos que disfrutes tu estadía.
 async function generarDespedida({ conn, userId, groupMetadata, chat}) {
   const username = `@${userId.split('@')[0]}`
   const pp = await conn.profilePictureUrl(userId, 'image').catch(() =>
-    'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg'
+    'https://files.catbox.moe/60z2ix.jpg'
 )
   const fecha = new Date().toLocaleDateString('es-ES', {
     timeZone: 'America/Santo_Domingo',
