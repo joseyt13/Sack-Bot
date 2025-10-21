@@ -23,7 +23,7 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
   const messages = []
   for (let i = 1; i <= 4; i++) {
     const img = await res.getRandom()
-    messages.push([`Imagen ${i}`, dev, img, [[]], [[]], [[]], [[]]])
+    messages.push([`Imagen ${i}`, '', img, [[]], [[]], [[]], [[]]])
 }
 
   await conn.sendCarousel(
