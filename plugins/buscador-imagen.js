@@ -1,3 +1,4 @@
+
 import { googleImage} from '@bochilteam/scraper'
 
 const handler = async (m, { conn, text, usedPrefix, command}) => {
@@ -11,7 +12,12 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
 }
 
   await m.react(rwait)
-  conn.reply(m.chat, '🌿 Descargando su imagen, espere unos minutos...', m)
+  conn.reply(
+    m.chat,
+    '🌿 Descargando su imagen, espere por favor...',
+    m,
+    global.rcanal
+)
 
   const res = await googleImage(text)
   const messages = [
@@ -23,8 +29,8 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
 
   await conn.sendCarousel(
     m.chat,
-    `🖼️ Resultado de búsqueda: *${text}*`,
-    '🍂 Buscador - Nagi 🍃',
+    `🖼️ Resultados de: *${text}*`,
+    '🍂 𝑵𝒂𝒈𝒊 - 𝑩𝒖𝒔𝒄𝒂𝒅𝒐𝒓 🍃',
     null,
     messages,
     m
