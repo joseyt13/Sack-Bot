@@ -224,7 +224,7 @@ await joinChannels(sock)
 if (m?.chat) {
   const mensaje = args[0]
 ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...`
-: `@${m.sender.split('@')[0]}, 🌿 Bienvenido, tu conexión como Sub-Bot fue exitosa.`
+: `@${m.sender.split('@')[0]}`
 
   await conn.sendMessage(
     m.chat,
