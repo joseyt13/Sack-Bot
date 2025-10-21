@@ -60,7 +60,7 @@ global.listo = '🍂 *Aqui tiene. ฅ^•ﻌ•^ฅ*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
 
 //Ids channel
-global.canalIdM = ["120363402097425674@newsletter", "120363402097425674@newsletter"]
+global.canalIdM = ["120363405641626756@newsletter", "120363405641626756@newsletter"]
 global.canalNombreM = ["🌿 Nagi-Bot - Channel Official ⚽", "🍂 Nagi-BotV1 - Official 🍃"]
 global.channelRD = await getRandomChannel()
 
