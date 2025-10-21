@@ -1,4 +1,4 @@
-import { sticker} from '../lib/sticker.js';
+import { sticker} from '../lib/sticker.js'
 
 const handler = async (m, { conn, args}) => {
   let stiker = false
@@ -15,8 +15,13 @@ const handler = async (m, { conn, args}) => {
     const marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
 
     if (/webp|image|video/.test(mime) && q.download) {
-      if (/video/.test(mime) && (q.msg || q).seconds> 16) {
-        return conn.reply(m.chat, '🍃 *_El video no puede durar más de 15 segundos para crear un sticker._*', m, global.rcanal)
+      if (/video/.test(mime) && (q.msg || q).seconds> 15) {
+        return conn.reply(
+          m.chat,
+          '🍃 *_El video no puede durar más de 15 segundos para crear un sticker._*',
+          m,
+          global.rcanal
+)
 }
 
       const buffer = await q.download()
@@ -27,11 +32,21 @@ const handler = async (m, { conn, args}) => {
       stiker = await sticker(false, args[0], texto1, texto2)
 
 } else {
-      return conn.reply(m.chat, '🌿 Por favor, envía una *imagen* o *video* para crear su sticker.', m, global.rcanal)
+      return conn.reply(
+        m.chat,
+        '🌿 Por favor, envía una *imagen* o *video* para crear su sticker.',
+        m,
+        global.rcanal
+)
 }
 
 } catch (e) {
-    await conn.reply(m.chat, `🍃 Ocurrió un error:\n*${e.message}*`, m, global.rcanal)
+    await conn.reply(
+      m.chat,
+      `🍃 Ocurrió un error:\n*${e.message}*`,
+      m,
+      global.rcanal
+)
     await m.react('🍂')
 } finally {
     if (stiker) {
