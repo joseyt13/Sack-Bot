@@ -1,4 +1,3 @@
-
 import { googleImage} from '@bochilteam/scraper'
 
 const handler = async (m, { conn, text, usedPrefix, command}) => {
@@ -20,12 +19,12 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
 )
 
   const res = await googleImage(text)
-  const messages = [
-    ['Imagen 1', dev, await res.getRandom(), [[]], [[]], [[]], [[]]],
-    ['Imagen 2', dev, await res.getRandom(), [[]], [[]], [[]], [[]]],
-    ['Imagen 3', dev, await res.getRandom(), [[]], [[]], [[]], [[]]],
-    ['Imagen 4', dev, await res.getRandom(), [[]], [[]], [[]], [[]]]
-  ]
+
+  const messages = []
+  for (let i = 1; i <= 4; i++) {
+    const img = await res.getRandom()
+    messages.push([`Imagen ${i}`, dev, img, [[]], [[]], [[]], [[]]])
+}
 
   await conn.sendCarousel(
     m.chat,
