@@ -50,8 +50,8 @@ global.etiqueta = 'Dev-fedexyz'
 // Money - banners
 
 global.moneda = 'NagiCoins'
-global.banner = 'https://files.catbox.moe/9393.jpg'
-global.avatar = 'https://qu.ax/030303jjpeg'
+global.banner = 'https://files.catbox.moe/60z2ix.jpg'
+global.avatar = 'https://files.catbox.moe/npum4p.jpg'
 
 // Contacto  - y canales
 
