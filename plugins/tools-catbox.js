@@ -5,7 +5,7 @@ import crypto from "crypto";
 import { FormData, Blob} from "formdata-node";
 import { fileTypeFromBuffer} from "file-type";
 
-const newsletterJid = '120363402097425674@newsletter';
+const newsletterJid = '120363405641626756@newsletter';
 const newsletterName = '🍂 NagiBot-IA Channel Official 🌿';
 const packname = '© Created by Dev-fedexyz';
 const redes = 'https://dev-fedexz.vercel.app';
