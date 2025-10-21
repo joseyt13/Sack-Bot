@@ -92,7 +92,7 @@ let handler = async (m, { conn, usedPrefix}) => {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363405641626756@newsletter',
-        newsletterName: '𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀'
+        newsletterName: '『 ☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 |  𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』'
 },
       externalAdReply: {
         title: '© Made By Dev-fedexyz 🌿',
