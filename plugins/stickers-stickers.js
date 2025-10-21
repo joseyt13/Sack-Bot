@@ -15,18 +15,25 @@ let handler = async (message, { conn, usedPrefix, command}) => {
   conn.reply(rcanal, '*🍃 _Creando su sticker, espere..._*', message, rcanal);
 
   try {
-    const nombre = message.pushName || 'usuario';
-    const botname = global.botname || 'Bot';
-    const fecha = new Date().toLocaleDateString('es-AR');
-    const tiempo = new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit'});
+    const botname = global.botname || 'NagiBot';
 
-    global.packsticker = [
-      '°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°',
-      `🌿 Usuario: ${nombre}`,
-      `🍂 Bot: ${botname}`,
-      `🍃 Fecha: ${fecha}`,
-      `🍒 Hora: ${tiempo}`
-    ].join('\n');
+    global.packsticker = '🌿 NagiBot-IA by Dev-fedexyz 🍃';
+
+    const vcard1 = `BEGIN:VCARD\nVERSION:3.0\nFN:${botname}\nORG:NagiBot\nTEL;type=CELL;type=VOICE;waid=0:0\nEND:VCARD`;
+
+    const qkontak = {
+      key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+},
+      message: {
+        contactMessage: {
+          displayName: "𝑵𝒂𝒈𝒊𝑩𝒐𝒕 - 𝒔𝒕𝒊𝒄𝒌𝒆𝒓𝒔 🍃",
+          vcard: vcard1
+}
+}
+};
 
     const media = await message.quoted.download();
     const stickerBuffer = await sticker(media, false, {
@@ -34,7 +41,7 @@ let handler = async (message, { conn, usedPrefix, command}) => {
       author: botname
 });
 
-    await conn.sendFile(rcanal, stickerBuffer, 'sticker.webp', '', message, { asSticker: true});
+    await conn.sendFile(rcanal, stickerBuffer, 'sticker.webp', '', qkontak, { asSticker: true});
 } catch (error) {
     console.error(error);
     conn.reply(rcanal, '❌ Ocurrió un error al crear el sticker.', message);
