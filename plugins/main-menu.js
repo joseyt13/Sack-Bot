@@ -91,7 +91,7 @@ let handler = async (m, { conn, usedPrefix}) => {
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363402097425674@newsletter',
+        newsletterJid: '120363405641626756@newsletter',
         newsletterName: '𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀'
 },
       externalAdReply: {
