@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 const handler = async (m, { text, conn, args, usedPrefix, command}) => {
-  const emoji = '🌸'
+  const emoji = '📩'
   const errorEmoji = '❌'
   const warning = '⚠️'
   const success = '✅'
@@ -10,7 +10,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
   if (!args[0]) {
     return conn.reply(
       m.chat,
-      '🍃 *Ingresa un url de facebook.*',
+      '🍃 *_Ingresa un url de facebook._*',
       m,
       global.rcanal
 )
@@ -41,7 +41,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
 📝 Descripción: ${description || 'Sin descripción'}
 🌐 Origen: ${siteName || 'Facebook'}
 
-✅ Tu video está listo para descargar.
+> *_✅ Tu video está listo para descargar._*
 `.trim()
 
     await conn.sendMessage(
