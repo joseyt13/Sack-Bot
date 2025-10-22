@@ -232,7 +232,7 @@ if (m?.chat) {
 
   await conn.reply(
     m.chat,
-    `@${m.sender.split('@')[0]}, 🍃 Genial, ya eres parte de la familia Sub-Bots.`,
+    `${usuario}, 🌿 Genial, ya eres parte de la familia Sub-Bots..`,
     m,
     global.rcanal
 );
