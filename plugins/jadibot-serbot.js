@@ -224,7 +224,7 @@ await joinChannels(sock)
 if (m?.chat) {
   const mensaje = args[0]
 ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...`
-: `*_@${m.sender.split('@')[0]} Conexión establecida..._*`
+: `@${m.sender.split('@')[0]} 🍃 *_Bienvenid@ a la conexión de Nagi-BotV1._*`
 
   await conn.sendMessage(
     m.chat,
@@ -235,11 +235,11 @@ if (m?.chat) {
   const usuario = `@${m.sender.split('@')[0]}`
   await conn.reply(
     m.chat,
-    `*_${usuario}, 🌿 Genial, ya eres parte de la familia Sub-Bots._*`,
+    `${usuario}, 🌿 *_Genial, ya eres parte de la familia Sub-Bots._*`,
     m,
     global.rcanal
 )
-     }
+}
     
 }}
 setInterval(async () => {
