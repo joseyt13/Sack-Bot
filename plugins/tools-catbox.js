@@ -6,8 +6,8 @@ import { FormData, Blob} from "formdata-node";
 import { fileTypeFromBuffer} from "file-type";
 
 const newsletterJid = '120363405641626756@newsletter';
-const newsletterName = '🍂 NagiBot-IA Channel Official 🌿';
-const packname = '© Created by Dev-fedexyz';
+const newsletterName = '『 ⏤͟͟͞͞☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』';
+const packname = '© 🄽🄰🄶🄸🄱🄾🅃‐🄼🄳';
 const redes = 'https://dev-fedexz.vercel.app';
 
 const iconos = [
