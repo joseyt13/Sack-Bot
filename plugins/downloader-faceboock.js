@@ -11,8 +11,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
     return conn.reply(
       m.chat,
       '🍃 *Ingresa un URL de Facebook.*',
-      m,
-      global.rcanal
+      m
 )
 }
 
@@ -28,8 +27,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
       return conn.reply(
         m.chat,
         `${errorEmoji} No se pudo obtener el video. Verifica el enlace por favor.`,
-        m,
-        global.rcanal
+        m
 )
 }
 
@@ -58,7 +56,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
 }
 }
 },
-      { quoted: m, m, global.rcanal}
+      { quoted: m}
 )
 
     await m.react(success)
@@ -68,8 +66,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
     return conn.reply(
       m.chat,
       `${warning} Ocurrió un error al procesar el video.`,
-      m,
-      global.rcanal
+      m
 )
 }
 }
