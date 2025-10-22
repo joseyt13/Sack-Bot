@@ -17,13 +17,13 @@ global.owner = [
 // <-- Número @s.whatsapp.net -->
   ['5491156178758', 'ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ ࣪🍂', true], // Principal 
   ['5491124918653', '𝘿𝙚𝙫-𝙛𝙚𝙙𝙚𝙭𝙮𝙯 ☕', true], // Secundario 
-  ['5491130964777', '𝐃𝐞𝐯-𝐟𝐞𝐝𝐞𝐱𝐲𝐳 🍃', true],// Tercer 
+  ['5491130964777', '𝐃𝐞𝐯-𝐟𝐞𝐝𝐞𝐱𝐲𝐳 🍃', true], // Terciario 
 ];
 
 
 global.mods = []
-global.suittag = ['5491156178758']
-global.prems = []
+global.suittag = ['5491156178758', '5491130964777', '5491124918653']
+global.prems = ['5491156178758']
 
 // Sistemas- y más
 
