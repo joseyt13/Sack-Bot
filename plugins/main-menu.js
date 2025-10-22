@@ -22,8 +22,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   tools: 'ᴍᴇɴᴜ ᴛᴏᴏʟꜱ',
   }
 
-  let header = '*_□ %category_*'
-  let body = '> ▪︎ *_%cmd_*'
+  let header = '*_□  %category_*'
+  let body = '> ▪︎  *_%cmd_*'
   let footer = ''
   let after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`
 
