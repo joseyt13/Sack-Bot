@@ -44,7 +44,7 @@ global.packsticker = `✦•────────────•✦
 ✦•────────────•✦`
 
 global.packsticker2 = `✧ 𝘿𝙚𝙫-𝙛𝙚𝙙𝙚𝙭𝙮𝙯 ✧`
-global.packname = 'Nagi-BotV1  🌿'
+global.packname = '𝑵𝒂𝒈𝒊𝑩𝒐𝒕 - 𝑰𝑨  🌿'
 global.botname = '⚽ 🄽🄰🄶🄸🄱🄾🅃‐🄼🄳 🍂'
 global.wm = 'NagiBot - MD ⚽'
 global.author = '© Made By dev-fedexyz'
