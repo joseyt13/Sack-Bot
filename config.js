@@ -46,11 +46,11 @@ global.packsticker = `✦•────────────•✦
 global.packsticker2 = `✧ 𝘿𝙚𝙫-𝙛𝙚𝙙𝙚𝙭𝙮𝙯 ✧`
 global.packname = '𝑵𝒂𝒈𝒊𝑩𝒐𝒕 - 𝑰𝑨  🌿'
 global.botname = '⚽ 🄽🄰🄶🄸🄱🄾🅃‐🄼🄳 🍂'
-global.wm = 'NagiBot - MD ⚽'
-global.author = '© Made By dev-fedexyz'
+global.wm = '𝐍𝐚𝐠𝐢𝐁𝐨𝐭 - 𝐌𝐃 ⚽'
+global.author = '© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 global.dev = '⌬ powered by Dev-fedexyz 🌿'
-global.textbot = 'Nagi-Bot • Made by Dev-fedexyz 🍂'
-global.etiqueta = 'Dev-fedexyz'
+global.textbot = '𝙉𝙖𝙜𝙞-𝘽𝙤𝙩 • 𝙈𝙖𝙙𝙚 𝙗𝙮 𝘿𝙚𝙫-𝙛𝙚𝙙𝙚𝙭𝙮𝙯 🍂'
+global.etiqueta = 'ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 
 // Money - banners
 
