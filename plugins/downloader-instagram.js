@@ -10,7 +10,7 @@ const handler = async (m, { args, conn}) => {
   if (!args[0]) {
     return conn.reply(
       m.chat,
-      '🍃 *Ingresa un enlace de Instagram.*',
+      '🍃 *_Ingresa un enlace de Instagram._*',
       m,
       global.rcanal
 )
@@ -27,7 +27,7 @@ const handler = async (m, { args, conn}) => {
         m.chat,
         media.url,
         'instagram.mp4',
-        `${emoji} Aquí tienes tu video de Instagram.`,
+        `${emoji} _Aquí tienes tu video de Instagram._`,
         m,
         global.rcanal
 )
