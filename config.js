@@ -10,9 +10,7 @@ import moment from 'moment-timezone'
 /*/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/*/
 
 global.botNumber = '' //Ejemplo: 5491156178758
-
 // Owner  y names bot
-
 global.owner = [
 // <-- Número @s.whatsapp.net -->
   ['5491156178758', 'ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ ࣪🍂', true], // Principal 
