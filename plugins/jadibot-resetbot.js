@@ -1,30 +1,36 @@
 let handler = async (m, { conn}) => {
-  const chatData = global.db.data.chats[m.chat];
+  const chatId = m.chat;
+  const chatData = global.db.data.chats[chatId];
 
-  if (!chatData?.primaryBot) {
+  if (/^\.limpiar$/i.test(m.text)) {
+    if (!global.conns || global.conns.length === 0) {
+      return conn.reply(chatId, '🌿 No hay sesiones activas de subbots para eliminar.', m, global.rcanal);
+}
+
+    global.conns.map(bot => bot.ws.close());
+    global.conns = [];
+
+    return conn.reply(chatId, '🧹 Todas las sesiones de subbots han sido eliminadas correctamente.', m, global.rcanal);
+}
+
+  if (/^\.restart$/i.test(m.text)) {
+    if (!chatData?.primaryBot) {
+      return conn.reply(chatId, '🌿 No hay ningún bot primario establecido en este grupo.', m, global.rcanal);
+}
+
+    chatData.primaryBot = null;
+
     return conn.reply(
-      m.chat,
-      '🌿 No hay ningún bot primario establecido en este grupo.',
+      chatId,
+      '🍃 Subbots restablecidos.\n\nAhora todos los bots válidos pueden volver a conectarse en este grupo.',
       m,
       global.rcanal
 );
 }
-
-  console.log(`[ResetBot] Restableciendo configuración en el grupo: ${m.chat}`);
-  chatData.primaryBot = null;
-
-  await conn.reply(
-    m.chat,
-    '🍃 Configuración restablecida.\n\nA partir de ahora, todos los bots válidos podrán responder en este grupo.',
-    m,
-    global.rcanal
-);
 };
 
-handler.help = ['limpiar', 'restart']
-handler.tags = ['serbot']
-handler.command = ['limpiar', 'restart']
+handler.command = ['limpiar', 'restart'];
 handler.group = true;
-handler.rowner = true;
+handler.admin = true;
 
-export default handler;
+export default handler;.
