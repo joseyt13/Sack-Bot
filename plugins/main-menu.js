@@ -22,8 +22,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   tools: 'ᴍᴇɴᴜ ᴛᴏᴏʟꜱ',
   }
 
-  let header = '*□ %category*'
-  let body = '> ▪︎ %cmd'
+  let header = '*_□ %category_*'
+  let body = '> ▪︎ *_%cmd_*'
   let footer = ''
   let after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`
 
@@ -44,12 +44,12 @@ let handler = async (m, { conn, usedPrefix}) => {
   let infoUser = `
 🍃 *_Hola, ${nombre} Soy Nagi-BotV1._*
 
-*🌿 I N F O - U S E R*
+*🌿 𝙄𝙉𝙁𝙊 𝙐𝙎𝙐𝘼𝙍𝙄𝙊*
 > *Usuario:* ${nombre}
 > *Premium:* ${premium}
 > *Limite:* ${limite}
 
-*🌿 I N F O - B O T*
+*🌿 𝘿𝘼𝙏𝙊𝙎 𝘿𝙀𝙇 𝘽𝙊𝙏*
 > *Grupos:* ${groupsCount}
 > *Activo:* ${muptime}
 > *Usuarios:* ${totalreg}
