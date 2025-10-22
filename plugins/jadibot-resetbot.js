@@ -2,18 +2,20 @@ let handler = async (m, { conn}) => {
   const chatId = m.chat;
   const chatData = global.db.data.chats[chatId];
 
-  if (['limpiar'].test(m.text)) {
+  // Comando.limpiar — eliminar sesiones de subbots
+  if (/^\.limpiar$/i.test(m.text)) {
     if (!global.conns || global.conns.length === 0) {
       return conn.reply(chatId, '🌿 No hay sesiones activas de subbots para eliminar.', m, global.rcanal);
 }
 
-    global.conns.map(bot => bot.ws.close());
-    global.conns = [];
+    global.conns.map(bot => bot.ws.close()); // Cierra todas las sesiones
+    global.conns = []; // Limpia el array de conexiones
 
     return conn.reply(chatId, '🧹 Todas las sesiones de subbots han sido eliminadas correctamente.', m, global.rcanal);
 }
 
-  if (['restart'].test(m.text)) {
+  // Comando.restart — restablecer subbots
+  if (/^\.restart$/i.test(m.text)) {
     if (!chatData?.primaryBot) {
       return conn.reply(chatId, '🌿 No hay ningún bot primario establecido en este grupo.', m, global.rcanal);
 }
@@ -29,8 +31,8 @@ let handler = async (m, { conn}) => {
 }
 };
 
-handler.command = ['limpiar', 'restart'];
+handler.command = /^\.limpiar$|^\.restart$/i;
 handler.group = true;
 handler.admin = true;
 
-export default handler;.
+export default handler;
