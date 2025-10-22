@@ -44,18 +44,18 @@ let handler = async (m, { conn, usedPrefix}) => {
   let infoUser = `
 🍃 *_Hola, ${nombre} Soy Nagi-BotV1._*
 
-*🌿 𝙄𝙉𝙁𝙊 𝙐𝙎𝙐𝘼𝙍𝙄𝙊*
-> *Usuario:* ${nombre}
-> *Premium:* ${premium}
-> *Limite:* ${limite}
+*_🌿 𝙄𝙉𝙁𝙊 𝙐𝙎𝙐𝘼𝙍𝙄𝙊_*
+> *_Usuario:_* *${nombre}*
+> *_Premium:_* *${premium}*
+> *_Limite:_* *${limite}*
 
-*🌿 𝘿𝘼𝙏𝙊𝙎 𝘿𝙀𝙇 𝘽𝙊𝙏*
-> *Grupos:* ${groupsCount}
-> *Activo:* ${muptime}
-> *Usuarios:* ${totalreg}
-> *Plataforma:* Ubuntu
+*_🌿 𝘿𝘼𝙏𝙊𝙎 𝘿𝙀𝙇 𝘽𝙊𝙏_*
+> *_Grupos:_* *${groupsCount}*
+> *_Activo:_* *${muptime}*
+> *_Usuarios:_* *${totalreg}*
+> *_Plataforma:_* *Ubuntu*
 
-*🍃 𝘾 𝙊 𝙈 𝘼 𝙉 𝘿 𝙊 𝙎*
+*_🍃 𝘾 𝙊 𝙈 𝘼 𝙉 𝘿 𝙊 𝙎_*
 `.trim()
 
   let commands = Object.values(global.plugins).filter(v => v.help && v.tags && v.command).map(v => {
