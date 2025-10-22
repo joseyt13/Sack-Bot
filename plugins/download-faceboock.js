@@ -10,7 +10,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
   if (!args[0]) {
     return conn.reply(
       m.chat,
-      '🍃 *_Ingresa un url de facebook._*',
+      '🍃 *Ingresa un URL de Facebook.*',
       m,
       global.rcanal
 )
@@ -33,15 +33,14 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
 )
 }
 
-    const { title, description, siteName} = json.metadata
+    const { title, description} = json.metadata
     const videoUrl = json.download
 
     const caption = `
 📺 Título: ${title || 'Sin título'}
 📝 Descripción: ${description || 'Sin descripción'}
-🌐 Origen: ${siteName || 'Facebook'}
 
-> *_✅ Tu video está listo para descargar._*
+✅ Tu video está listo para descargar.
 `.trim()
 
     await conn.sendMessage(
@@ -49,12 +48,11 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
       {
         video: { url: videoUrl},
         caption,
-        fileName: 'facebook_video.mp4',
         mimetype: 'video/mp4',
         contextInfo: {
           externalAdReply: {
-            title: '𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨',
-            body: 'Nagi - Descargas',
+            title: 'NagiBot-IA',
+            body: 'Descargas desde Facebook',
             mediaType: 1,
             renderLargerThumbnail: true
 }
