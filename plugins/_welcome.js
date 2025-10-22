@@ -2,7 +2,7 @@ import fs from 'fs'
 import { WAMessageStubType} from '@whiskeysockets/baileys'
 
 const newsletterJid = '120363405641626756@newsletter'
-const newsletterName = '🍃 Nagi-BotV1| Channel Official'
+const newsletterName = '『 ⏤͟͟͞͞☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』'
 const packname = '🄽🄰🄶🄸🄱🄾🅃‐🄼🄳'
 
 const iconos = [
