@@ -2,7 +2,7 @@ let handler = async (m, { conn}) => {
   const chatId = m.chat;
   const chatData = global.db.data.chats[chatId];
 
-  if (/^\.limpiar$/i.test(m.text)) {
+  if (['limpiar'].test(m.text)) {
     if (!global.conns || global.conns.length === 0) {
       return conn.reply(chatId, '🌿 No hay sesiones activas de subbots para eliminar.', m, global.rcanal);
 }
@@ -13,7 +13,7 @@ let handler = async (m, { conn}) => {
     return conn.reply(chatId, '🧹 Todas las sesiones de subbots han sido eliminadas correctamente.', m, global.rcanal);
 }
 
-  if (/^\.restart$/i.test(m.text)) {
+  if (['restart'].test(m.text)) {
     if (!chatData?.primaryBot) {
       return conn.reply(chatId, '🌿 No hay ningún bot primario establecido en este grupo.', m, global.rcanal);
 }
