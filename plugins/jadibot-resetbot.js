@@ -25,6 +25,6 @@ handler.help = ['limpiar', 'restart']
 handler.tags = ['serbot']
 handler.command = ['limpiar', 'restart']
 handler.group = true;
-handler.admin = true;
+handler.rowner = true;
 
 export default handler;
