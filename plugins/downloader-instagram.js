@@ -46,7 +46,7 @@ const handler = async (m, { args, conn}) => {
 }
 
 handler.command = ['instagram', 'ig']
-handler.tags = ['descargas']
+handler.tags = ['downloader']
 handler.help = ['instagram', 'ig']
 handler.register = true
 handler.coin = 2
