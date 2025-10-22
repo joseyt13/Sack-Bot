@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix}) => {
   let header = '*□ %category*'
   let body = '> ▪︎ %cmd'
   let footer = ''
-  let after = `𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 © 𝐝𝐞𝐯-𝐟𝐞𝐝𝐞𝐱𝐲𝐳 𝟐𝟎𝟐𝟓`
+  let after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`
 
   let user = global.db.data.users[m.sender]
   let premium = user.premium? '✅ Sí': '❌ No'
@@ -95,8 +95,8 @@ let handler = async (m, { conn, usedPrefix}) => {
         newsletterName: '『 ☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 |  𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』'
 },
       externalAdReply: {
-        title: '© Made By Dev-fedexyz 🌿',
-        body: '⌬ NagiBot - IA 🍃',
+        title: '© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🍂',
+        body: '⌬ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 🍃',
         thumbnailUrl: imagen,
         mediaType: 1,
         renderLargerThumbnail: true
