@@ -61,7 +61,7 @@ global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => '
 
 //Ids channel
 global.canalIdM = ["120363405641626756@newsletter", "120363405641626756@newsletter"]
-global.canalNombreM = ["🌿 Nagi-Bot - Channel Official ⚽", "🍂 Nagi-BotV1 - Official 🍃"]
+global.canalNombreM = ["『 ⏤͟͟͞͞☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』", "『 ⏤͟͟͞͞☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』"]
 global.channelRD = await getRandomChannel()
 
 //fechas
