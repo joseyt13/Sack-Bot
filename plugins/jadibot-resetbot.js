@@ -2,19 +2,28 @@ let handler = async (m, { conn}) => {
   const chatData = global.db.data.chats[m.chat];
 
   if (!chatData?.primaryBot) {
-    return m.reply('🌿 No hay ningún bot primario establecido en este grupo.');
+    return conn.reply(
+      m.chat,
+      '🌿 No hay ningún bot primario establecido en este grupo.',
+      m,
+      global.rcanal
+);
 }
 
   console.log(`[ResetBot] Restableciendo configuración en el grupo: ${m.chat}`);
   chatData.primaryBot = null;
 
-  await m.reply(
-    '🍃 Configuración restablecida.\n\nA partir de ahora, todos los bots válidos podrán responder en este grupo.'
+  await conn.reply(
+    m.chat,
+    '🍃 Configuración restablecida.\n\nA partir de ahora, todos los bots válidos podrán responder en este grupo.',
+    m,
+    global.rcanal
 );
 };
 
-handler.customPrefix = /^(resetbot|reset)$/i;
-handler.command = new RegExp();
+handler.help = ['limpiar', 'restart']
+handler.tags = ['serbot']
+handler.command = ['limpiar', 'restart']
 handler.group = true;
 handler.admin = true;
 
