@@ -74,9 +74,9 @@ const handler = async (m, { text, conn, args, usedPrefix, command}) => {
 }
 }
 
-handler.help = ['facebook', 'fb'],
+handler.help = ['facebook', 'fb']
 handler.tags = ['downloader']
-handler.command = ['facebook', 'fb'],
+handler.command = ['facebook', 'fb']
 handler.group = true
 handler.register = true
 
