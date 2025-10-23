@@ -11,7 +11,7 @@ const handler = async (m, { conn}) => {
     message: {
       contactMessage: {
         displayName: 'Dev-fedexyz',
-        vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:NagiBot\nTEL;type=CELL:5491156178758\nEND:VCARD'
+        vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:NagiBot\nTEL;type=CELL:5491130964777\nEND:VCARD'
 }
 },
     participant: '0@s.whatsapp.net'
@@ -30,8 +30,8 @@ const handler = async (m, { conn}) => {
       name: "cta_url",
       buttonParamsJson: JSON.stringify({
         display_text: "🐞 Reportar Error",
-        url: "https://wa.me/5491156178758",
-        merchant_url: "https://wa.me/5491156178758"
+        url: "https://wa.me/5491130964777",
+        merchant_url: "https://wa.me/5491130964777"
 })
 },
     {
