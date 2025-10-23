@@ -1,5 +1,3 @@
-import fs from 'fs';
-
 let handler = async (m, { conn, usedPrefix}) => {
   const delay = ms => new Promise(res => setTimeout(res, ms));
   const nombre = await conn.getName(m.sender);
@@ -21,16 +19,16 @@ let handler = async (m, { conn, usedPrefix}) => {
   const infoUser = `
 🍃 *Hola, ${nombre} Soy Nagi-BotV1.*
 
-🌿 *INFO USUARIO*
-• 👤 Usuario: *${nombre}*
-• 💎 Premium: *${premium}*
-• 📌 Límite: *${limite}*
+🌿 *_INFO USUARIO_*
+• 👤 *_Usuario:_* *${nombre}*
+• 💎 *_Premium:_* *${premium}*
+• 📌 *_Límite:_* *${limite}*
 
-🌿 *DATOS DEL BOT*
-• 👥 Grupos: *${groupsCount}*
-• ⏱️ Activo: *${muptime}*
-• 🌐 Usuarios: *${totalreg}*
-• 🖥️ Plataforma: *Ubuntu*
+🌿 *_DATOS DEL BOT_*
+• 👥 *_Grupos:_* *${groupsCount}*
+• ⏱️ *_Activo:_* *${muptime}*
+• 🌐 *_Usuarios:_* *${totalreg}*
+• 🖥️ *_Plataforma:_* *Ubuntu*
 `.trim();
 
   const imagen = 'https://files.catbox.moe/60z2ix.jpg';
@@ -39,10 +37,7 @@ let handler = async (m, { conn, usedPrefix}) => {
   await m.react('⚽');
 
   await conn.sendMessage(m.chat, {
-    document: fs.readFileSync('./package.json'),
-    fileName: '🍃 NagiBot-IA | Menú 🌿',
-    mimetype: 'application/pdf',
-    caption: `${infoUser}\n\n${after}`,
+    text: `${infoUser}\n\n${after}`,
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
@@ -56,7 +51,7 @@ let handler = async (m, { conn, usedPrefix}) => {
         thumbnailUrl: imagen,
         mediaType: 1,
         renderLargerThumbnail: true,
-        sourceUrl: 'https://github.com/Dev-fedexyz13' // Puedes cambiar esto por tu enlace oficial
+        sourceUrl: 'https://github.com/Dev-fedexyz13'
 }
 },
     buttons: [
