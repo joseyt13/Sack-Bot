@@ -133,21 +133,27 @@ if (methodCodeQR) {
 
 if (!methodCodeQR &&!methodCode &&!fs.existsSync(`./${Nagisessions}/creds.json`)) {
   do {
-    console.log('\n╭────────────────────────────────────────────');
-    console.log('│ 📚 Seleccione un método de conexión:');
-    console.log('│');
-    console.log('│ 1. Con código QR');
-    console.log('│ 2. Con código de texto de 8 dígitos');
-    console.log('╰────────────────────────────────────────────');
+    console.log(chalk.cyanBright('\n╭────────────────────────────'));
+    console.log(chalk.whiteBright('│ 📚  Método de conexión:'));
+    console.log(chalk.whiteBright('│'));
+    console.log(chalk.whiteBright('│ 1. Código QR'));
+    console.log(chalk.whiteBright('│ 2. Código de texto'));
+    console.log(chalk.cyanBright('╰────────────────────────────'));
 
-    opcion = await question('\n🌿 Ingrese su opción (1 o 2): --> ');
+    opcion = await question(
+      chalk.cyanBright('\n🌿  Elige una opción (1 o 2): ') + chalk.bold.magentaBright('--> ')
+);
 
     if (!/^[1-2]$/.test(opcion)) {
-      console.log(chalk.bold.redBright('\n🌿 Opción inválida. Solo se permite "1" o "2". No se aceptan letras ni símbolos especiales.'));
+      console.log(chalk.redBright('\n🌿  Opción inválida.'));
+      console.log(chalk.redBright('🍂  Solo se permite "1" o "2".'));
 }
 
-} while ((opcion!== '1' && opcion!== '2') || fs.existsSync(`./${Nagisessions}/creds.json`));
-  } 
+} while (
+    (opcion!== '1' && opcion!== '2') ||
+    fs.existsSync(`./${Nagisessions}/creds.json`)
+);
+} 
 
 console.info = () => {} 
 console.debug = () => {} 
