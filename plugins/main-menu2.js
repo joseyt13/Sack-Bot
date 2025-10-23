@@ -57,7 +57,7 @@ let handler = async (m, { conn, usedPrefix}) => {
         type: 1
 },
       {
-        buttonId: `${usedPrefix}reg`,
+        buttonId: `${usedPrefix}reg Nagi-Bot.17`,
         buttonText: { displayText: '🌿 ᴀᴜᴛᴏ ʀᴇɢɪꜱᴛʀᴏ'},
         type: 1
 }
