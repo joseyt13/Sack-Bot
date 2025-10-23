@@ -37,8 +37,8 @@ const {CONNECTING} = ws
 const {chain} = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
-console.clear();
-console.log(chalk.magentaBright('\n🍂 Iniciando NagiBot...\n'));
+let { say } = cfonts
+console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
 
 say('NagiBot - MD', {
   font: 'chrome',
