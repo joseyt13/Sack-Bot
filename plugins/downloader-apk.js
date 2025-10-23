@@ -47,7 +47,7 @@ const handler = async (m, { conn, usedPrefix, text}) => {
 }
 };
 
-handler.tags = ['descargas'];
+handler.tags = ['downloader'];
 handler.help = ['apkmod'];
 handler.command = ['apk', 'modapk', 'aptoide'];
 handler.group = true;
