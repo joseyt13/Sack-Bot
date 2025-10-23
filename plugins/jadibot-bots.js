@@ -54,15 +54,28 @@ const handler = async (m, { conn, command, usedPrefix}) => {
 ╰────────────`;
 }).join('\n\n');
 
-      const msg = `SUB-BOTS ACTIVOS\n\nConectados: ${activeBots.length}\n\n${activeBots.length? list: 'No hay sub-bots activos.'}`;
+      const msg = `*🤖 SUB-BOTS ACTIVOS*\n\n🔌 Conectados: ${activeBots.length}\n\n${activeBots.length? list: 'No hay sub-bots activos.'}`;
+
+      const interactiveButtons = [
+        {
+          name: "cta_command",
+          buttonParamsJson: JSON.stringify({
+            display_text: "ꜱᴇʀ ꜱᴜʙ-ʙᴏᴛ",
+            command: ".code"
+})
+}
+      ];
 
       await conn.sendMessage(m.chat, {
-        text: msg,
+        image: { url: "https://files.catbox.moe/60z2ix.jpg"},
+        caption: msg,
+        footer: "🌿 NagiBot-IA | Panel de SubBots",
+        interactiveButtons,
         mentions: conn.parseMention(msg)
 }, { quoted: m});
 }
 } catch (e) {
-    await m.reply('Ocurrió un error inesperado.');
+    await m.reply('❌ Ocurrió un error inesperado.');
     console.error(e);
 }
 };
@@ -70,6 +83,6 @@ const handler = async (m, { conn, command, usedPrefix}) => {
 handler.tags = ['serbot'];
 handler.help = ['deletebot', 'delcode', 'bots'];
 handler.command = ['deletebot', 'delcode', 'bots'];
-handler.register = true
+handler.register = true;
 
 export default handler;
