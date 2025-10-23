@@ -22,21 +22,21 @@ const handler = async (m, { conn, command, usedPrefix}) => {
 
       if (!existsSync(dirPath)) {
         await conn.sendMessage(m.chat, {
-          text: `🌿 No hay sesión activa para eliminar.\n\nUsa *${usedPrefix}qr* para crear una nueva.`,
+          text: `🌿 ɴᴏ ʜᴀʏ ꜱᴇꜱɪóɴ ᴀᴄᴛɪᴠᴀ ᴘᴀʀᴀ ᴇʟɪᴍɪɴᴀʀ.\n\nᴜꜱᴀ *${usedPrefix}qr* ᴘᴀʀᴀ ᴄʀᴇᴀʀ ᴜɴᴀ ɴᴜᴇᴠᴀ.`,
 }, { quoted: m});
         return;
 }
 
       if (global.conn.user.jid!== conn.user.jid) {
         await conn.sendMessage(m.chat, {
-          text: `🍂 Solo el bot principal puede ejecutar este comando.\n\nContacto: wa.me/${global.conn.user.jid.split('@')[0]}`,
+          text: `🍂 ꜱᴏʟᴏ ᴇʟ ʙᴏᴛ ᴘʀɪɴᴄɪᴘᴀʟ ᴘᴜᴇᴅᴇ ᴇᴊᴇᴄᴜᴛᴀʀ ᴇꜱᴛᴇ ᴄᴏᴍᴀɴᴅᴏ.\n\nᴄᴏɴᴛᴀᴄᴛᴏ: wa.me/${global.conn.user.jid.split('@')[0]}`,
 }, { quoted: m});
         return;
 }
 
       rmSync(dirPath, { recursive: true, force: true});
       await conn.sendMessage(m.chat, {
-        text: `🍃 Sesión eliminada correctamente.`,
+        text: `🍃 ꜱᴇꜱɪóɴ ᴇʟɪᴍɪɴᴀᴅᴀ ᴄᴏʀʀᴇᴄᴛᴀᴍᴇɴᴛᴇ.`,
 }, { quoted: m});
 }
 
@@ -47,14 +47,14 @@ const handler = async (m, { conn, command, usedPrefix}) => {
         const uptime = bot.uptime? formatUptime(Date.now() - bot.uptime): 'Desconocido';
         const number = bot.user.jid.split('@')[0];
         const name = bot.user.name || 'Sin Nombre';
-        return `╭─ SUB-BOT ${i + 1}
-│• Usuario: ${name}
-│• Número: wa.me/${number}
-│• Activo: ${uptime}
+        return `╭─ ꜱᴜʙ-ʙᴏᴛ ${i + 1}
+│• ᴜꜱᴜᴀʀɪᴏ: ${name}
+│• ɴᴜ́ᴍᴇʀᴏ: wa.me/${number}
+│• ᴀᴄᴛɪᴠᴏ: ${uptime}
 ╰────────────`;
 }).join('\n\n');
 
-      const msg = `*🤖 SUB-BOTS ACTIVOS*\n\n🔌 Conectados: ${activeBots.length}\n\n${activeBots.length? list: 'No hay sub-bots activos.'}`;
+      const msg = `*🌸 ꜱᴜʙ-ʙᴏᴛꜱ ᴀᴄᴛɪᴠᴏꜱ*\n\n🔌 ᴄᴏɴᴇᴄᴛᴀᴅᴏꜱ: ${activeBots.length}\n\n${activeBots.length? list: '❌ ɴᴏ ʜᴀʏ ꜱᴜʙ-ʙᴏᴛꜱ ᴀᴄᴛɪᴠᴏꜱ.'}`;
 
       const interactiveButtons = [
         {
@@ -69,13 +69,13 @@ const handler = async (m, { conn, command, usedPrefix}) => {
       await conn.sendMessage(m.chat, {
         image: { url: "https://files.catbox.moe/60z2ix.jpg"},
         caption: msg,
-        footer: "🌿 NagiBot-IA | Panel de SubBots",
+        footer: "© 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | ꜱᴇʀ ꜱᴜʙ-ʙᴏᴛ 🌿",
         interactiveButtons,
         mentions: conn.parseMention(msg)
 }, { quoted: m});
 }
 } catch (e) {
-    await m.reply('❌ Ocurrió un error inesperado.');
+    await m.reply('❌ ᴏᴄᴜʀʀɪó ᴜɴ ᴇʀʀᴏʀ ɪɴᴇsᴘᴇʀᴀᴅᴏ.');
     console.error(e);
 }
 };
