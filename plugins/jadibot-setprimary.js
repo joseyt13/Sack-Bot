@@ -22,8 +22,7 @@ let handler = async (m, { conn, text}) => {
   chatData.primaryBot = botJid;
 
   const confirmation = `🍃 *@${text}* ahora es el bot principal del grupo.\n` +
-    `Solo él responderá a los comandos.\n` +
-    `Usa \`resetbot\` para revertir esto.`;
+    `Solo él responderá a los comandos.`;
 
   await conn.sendMessage(m.chat, {
     text: confirmation,
