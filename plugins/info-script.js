@@ -37,9 +37,9 @@ const handler = async (m, { conn}) => {
     {
       name: "cta_url",
       buttonParamsJson: JSON.stringify({
-        display_text: "🔧 Contribuir",
-        url: "https://github.com/Dev-fedexyz13/Nagi-BotV1",
-        merchant_url: "https://github.com/Dev-fedexyz13/Nagi-BotV1"
+        display_text: "🍒 Canal Oficial",
+        url: "https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y",
+        merchant_url: "https://whatsapp.com/channel/0029Vb6jsun6buMJfw17lS1Y"
 })
 }
   ];
