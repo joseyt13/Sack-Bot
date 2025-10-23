@@ -55,6 +55,11 @@ let handler = async (m, { conn, usedPrefix}) => {
         buttonId: `${usedPrefix}menucompleto`,
         buttonText: { displayText: '🌿 ᴍᴇɴᴜ ᴄᴏᴍᴘʟᴇᴛᴏ'},
         type: 1
+},
+      {
+        buttonId: `${usedPrefix}reg`,
+        buttonText: { displayText: '🌿 ᴀᴜᴛᴏ ʀᴇɢɪꜱᴛʀᴏ'},
+        type: 1
 }
     ]
 }, { quoted: m});
@@ -65,6 +70,5 @@ let handler = async (m, { conn, usedPrefix}) => {
 handler.help = ['menu'];
 handler.tags = ['main'];
 handler.command = ['menu', 'menú', 'help'];
-handler.register = true;
 
 export default handler;
