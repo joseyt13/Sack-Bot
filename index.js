@@ -177,29 +177,46 @@ version,
 global.conn = makeWASocket(connectionOptions);
 
 if (!fs.existsSync(`./${Nagisessions}/creds.json`)) {
-if (opcion === '2' || methodCode) {
-opcion = '2'
-if (!conn.authState.creds.registered) {
-let addNumber
-if (!!phoneNumber) {
-addNumber = phoneNumber.replace(/[^0-9]/g, '')
+  if (opcion === '2' || methodCode) {
+    opcion = '2';
+
+    if (!conn.authState.creds.registered) {
+      let addNumber;
+
+      if (!!phoneNumber) {
+        addNumber = phoneNumber.replace(/[^0-9]/g, '');
 } else {
-do {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`🍂 Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.yellowBright(`✏  Ejemplo: 54911×××××××`)}\n${chalk.bold.magentaBright('---> ')}`)))
-phoneNumber = phoneNumber.replace(/\D/g,'')
-if (!phoneNumber.startsWith('+')) {
-phoneNumber = `+${phoneNumber}`
+        do {
+          console.log('\n╭────────────────────────────────────────────');
+          console.log('│ 🍂 Por favor, ingrese el número de WhatsApp');
+          console.log('│ ✏ Ejemplo: 54911×××××××');
+          console.log('╰────────────────────────────────────────────');
+
+          phoneNumber = await question(chalk.bgBlack(chalk.bold.magentaBright('---> ')));
+          phoneNumber = phoneNumber.replace(/\D/g, '');
+
+          if (!phoneNumber.startsWith('+')) {
+            phoneNumber = `+${phoneNumber}`;
 }
-} while (!await isValidPhoneNumber(phoneNumber))
-rl.close()
-addNumber = phoneNumber.replace(/\D/g, '')
-setTimeout(async () => {
-let codeBot = await conn.requestPairingCode(addNumber)
-codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`🍃 Codigo de vinculación...`)), chalk.bold.white(chalk.white(codeBot)))
-}, 3000)
-}}}
+
+} while (!await isValidPhoneNumber(phoneNumber));
+
+        rl.close();
+        addNumber = phoneNumber.replace(/\D/g, '');
+
+        setTimeout(async () => {
+          let codeBot = await conn.requestPairingCode(addNumber);
+          codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot;
+
+          console.log('\n╭────────────────────────────────────────────');
+          console.log('│ 🍃 Código de vinculación generado:');
+          console.log(`│ 🔐 ${chalk.bold.white(codeBot)}`);
+          console.log('╰────────────────────────────────────────────\n');
+}, 3000);
 }
+}
+}
+                   }
 
 conn.isInit = false;
 conn.well = false;
