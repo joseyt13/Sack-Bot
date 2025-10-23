@@ -32,10 +32,18 @@ let handler = async (m, { conn, usedPrefix}) => {
 `.trim();
 
   const imagen = 'https://files.catbox.moe/60z2ix.jpg';
+  const video = 'https://files.catbox.moe/6zg54n.mp4';
   const after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`;
 
   await m.react('⚽');
 
+  // Enviar video primero
+  await conn.sendMessage(m.chat, {
+    video: { url: video},
+    caption: '🌿 ᴍᴇɴᴜ ᴠɪꜱᴜᴀʟ - ɴᴀɢɪʙᴏᴛ'
+}, { quoted: m});
+
+  // Luego enviar imagen con info y botón
   await conn.sendMessage(m.chat, {
     image: { url: imagen},
     caption: `${infoUser}\n\n${after}`,
