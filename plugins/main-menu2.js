@@ -37,7 +37,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   await m.react('⚽');
 
   await conn.sendMessage(m.chat, {
-    text: `${infoUser}\n\n${after}`,
+    image: { url: imagen},
+    caption: `${infoUser}\n\n${after}`,
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
