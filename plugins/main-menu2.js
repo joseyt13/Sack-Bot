@@ -37,23 +37,10 @@ let handler = async (m, { conn, usedPrefix}) => {
 
   await m.react('⚽');
 
-  // Enviar video primero
   await conn.sendMessage(m.chat, {
     video: { url: video},
-    caption: '🌿 ᴍᴇɴᴜ ᴠɪꜱᴜᴀʟ - ɴᴀɢɪʙᴏᴛ'
-}, { quoted: m});
-
-  // Luego enviar imagen con info y botón
-  await conn.sendMessage(m.chat, {
-    image: { url: imagen},
     caption: `${infoUser}\n\n${after}`,
     contextInfo: {
-      forwardingScore: 999,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363405641626756@newsletter',
-        newsletterName: '『 ☆ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 | 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍 ❀ 』'
-},
       externalAdReply: {
         title: '© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🍂',
         body: '⌬ NagiBot-IA 🍃',
