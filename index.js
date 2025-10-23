@@ -55,9 +55,9 @@ say('created by Dev-fedexyz', {
 });
 
 console.log(chalk.cyanBright('\n╔════════════════════════════╗'));
-console.log(chalk.whiteBright('║ 🌿   ESTADO: Iniciado        ║'));
+console.log(chalk.whiteBright('║ 🌿   ESTADO: Iniciado       ║'));
 console.log(chalk.whiteBright('║ 🍃   CREADOR: Dev-fedexyz   ║'));
-console.log(chalk.whiteBright('║ 🍂   GITHUB: Dev-fedexyz13   ║'));
+console.log(chalk.whiteBright('║ 🍂   GITHUB: Dev-fedexyz13  ║'));
 console.log(chalk.cyanBright('╚════════════════════════════╝\n'));
 
 protoType();
@@ -132,12 +132,12 @@ if (methodCodeQR) {
 
 if (!methodCodeQR &&!methodCode &&!fs.existsSync(`./${Nagisessions}/creds.json`)) {
   do {
-    console.log(chalk.cyanBright('\n╓─────────────────────'));
+    console.log(chalk.cyanBright('\n╓──────────────────────'));
     console.log(chalk.whiteBright('║ 📚  Método de conexión'));
     console.log(chalk.whiteBright('║'));
     console.log(chalk.whiteBright('║ 1. Código QR'));
     console.log(chalk.whiteBright('║ 2. Código de 8 digitos'));
-    console.log(chalk.cyanBright('╙─────────────────────'));
+    console.log(chalk.cyanBright('╙──────────────────────'));
 
     opcion = await question(
       chalk.cyanBright('\n🌿 Elige una opción (1 o 2): ') + chalk.bold.blueBright('→ ')
