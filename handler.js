@@ -1,7 +1,6 @@
 import { smsg } from './lib/simple.js'
 import './plugins/main-allfake.js'
 import './plugins/owner-update.js'
-import './lib/termux.sh'
 import { format } from 'util'
 import * as ws from 'ws';
 import { fileURLToPath } from 'url'
