@@ -125,18 +125,29 @@ const opcionTexto = chalk.bold.cyan
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
-let opcion
-if (methodCodeQR) {
-opcion = '1'
-}
-if (!methodCodeQR && !methodCode && !fs.existsSync(`./${Nagisessions}/creds.json`)) {
-do {
-opcion = await question(colores('📚 Seleccione una opción:\n') + opcionQR('1. Con código QR\n') + opcionTexto('2. Con código de texto de 8 dígitos\n--> '))
+let opcion;
 
-if (!/^[1-2]$/.test(opcion)) {
-console.log(chalk.bold.redBright(`🌿 No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
-}} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${Nagisessions}/creds.json`))
-} 
+if (methodCodeQR) {
+  opcion = '1';
+}
+
+if (!methodCodeQR &&!methodCode &&!fs.existsSync(`./${Nagisessions}/creds.json`)) {
+  do {
+    console.log('\n╭────────────────────────────────────────────');
+    console.log('│ 📚 Seleccione un método de conexión:');
+    console.log('│');
+    console.log('│ 1. Con código QR');
+    console.log('│ 2. Con código de texto de 8 dígitos');
+    console.log('╰────────────────────────────────────────────');
+
+    opcion = await question('\n🌿 Ingrese su opción (1 o 2): --> ');
+
+    if (!/^[1-2]$/.test(opcion)) {
+      console.log(chalk.bold.redBright('\n🌿 Opción inválida. Solo se permite "1" o "2". No se aceptan letras ni símbolos especiales.'));
+}
+
+} while ((opcion!== '1' && opcion!== '2') || fs.existsSync(`./${Nagisessions}/creds.json`));
+  } 
 
 console.info = () => {} 
 console.debug = () => {} 
