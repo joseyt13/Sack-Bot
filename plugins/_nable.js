@@ -14,40 +14,20 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin}) 
     isEnable = false;
 } else {
     const estado = isEnable? '🍃 Activado': '🍒 Desactivado';
-    return conn.reply(m.chat, `🍂 Un administrador puede activar o desactivar el *${command}* utilizando:\n\n> 🍃  *${usedPrefix}${command} on* para activar.\n> 🍃 *${usedPrefix}${command} off* para desactivar.\n\n🍃 Estado actual » *${estado}*`, m);
+    return conn.reply(
+      m.chat,
+      `🌿 Un administrador puede activar o desactivar el *${command}* utilizando:\n\n` +
+      `> 🍃 *${usedPrefix}${command} on* para activar.\n` +
+      `> 🍂 *${usedPrefix}${command} off* para desactivar.\n\n` +
+      `📚 Estado actual » *${estado}*`,
+      m
+);
 }
 
   switch (type) {
     case 'welcome':
-      if (!m.isGroup) {
-        global.dfail('group', m, conn);
-        throw false;
-}
-      if (!(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn);
-        throw false;
-}
-      chat.welcome = isEnable;
-      break;
-
-    case 'antiprivado':
-      isAll = true;
-      if (!isOwner) {
-        global.dfail('rowner', m, conn);
-        throw false;
-}
-      bot.antiPrivate = isEnable;
-      break;
-
-    case 'antispam':
-      isAll = true;
-      if (!isOwner) {
-        global.dfail('rowner', m, conn);
-        throw false;
-}
-      bot.antiSpam = isEnable;
-      break;
-
+    case 'antilink':
+    case 'nsfw':
     case 'antisubbots':
       if (!m.isGroup) {
         global.dfail('group', m, conn);
@@ -57,30 +37,32 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin}) 
         global.dfail('admin', m, conn);
         throw false;
 }
-      chat.antiBot2 = isEnable;
+      chat[type] = isEnable;
       break;
 
-    case 'nsfw':
-      if (!m.isGroup) {
-        global.dfail('group', m, conn);
+    case 'antiprivado':
+    case 'antispam':
+      isAll = true;
+      if (!isOwner) {
+        global.dfail('rowner', m, conn);
         throw false;
 }
-      if (!(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn);
-        throw false;
-}
-      chat.nsfw = isEnable;
+      bot[type === 'antiprivado'? 'antiPrivate': 'antiSpam'] = isEnable;
       break;
 
     default:
       return conn.reply(m.chat, '⚠️ Comando no reconocido.', m);
 }
 
-  conn.reply(m.chat, `🌿 La función *${type}* se *${isEnable? 'activó': 'desactivó'}* ${isAll? 'para el bot completo': 'en este chat'}`, m);
+  conn.reply(
+    m.chat,
+    `🌿 La función *${type}* se *${isEnable? 'activó': 'desactivó'}* ${isAll? 'para el bot completo': 'en este chat'}`,
+    m
+);
 };
 
-handler.help = ['welcome', 'antiprivado', 'antispam', 'antisubbots', 'nsfw'];
+handler.help = ['welcome', 'antiprivado', 'antispam', 'antisubbots', 'nsfw', 'antilink'];
 handler.tags = ['nable'];
-handler.command = ['welcome', 'antiprivado', 'antispam', 'antisubbots', 'nsfw'];
+handler.command = ['welcome', 'antiprivado', 'antispam', 'antisubbots', 'nsfw', 'antilink'];
 
 export default handler;
