@@ -505,7 +505,28 @@ if (stopped === 'close' || !conn || !conn.user) return
 console.log(await purgeOldFiles());
 console.log(chalk.bold.cyanBright(`\n╭» ❍ ARCHIVOS ❍\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))}, 1000 * 60 * 10)
 
-_quickTest().then(() => conn.logger.info(chalk.bold(`🌿  H E C H O\n`.trim()))).catch(console.error)
+_quickTest()
+.then(() => conn.logger.info(chalk.greenBright.bold('✅  BOT INICIADO CORRECTAMENTE')))
+.catch(console.error);
+
+setInterval(async () => {
+  if (stopped === 'close' ||!conn?.user) return;
+
+  const uptimeMs = process.uptime() * 1000;
+  const formattedUptime = formatUptime(uptimeMs);
+  const statusText = `${packname} | 🍃 Uptime: ${formattedUptime}`;
+
+  await conn.updateProfileStatus(statusText).catch(() => {});
+}, 60000);
+
+function formatUptime(ms) {
+  const d = isNaN(ms)? '--': Math.floor(ms / 86400000);
+  const h = isNaN(ms)? '--': Math.floor(ms / 3600000) % 24;
+  const m = isNaN(ms)? '--': Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms)? '--': Math.floor(ms / 1000) % 60;
+
+  return `${d}d ${h}h ${m}m ${s}s`;
+}
 
 async function isValidPhoneNumber(number) {
 try {
