@@ -193,13 +193,13 @@ if (!fs.existsSync(`./${Nagisessions}/creds.json`)) {
         addNumber = phoneNumber.replace(/[^0-9]/g, '');
 } else {
         do {
-          console.log(chalk.blueBright('\n╭────────────────────────────────────────────'));
-          console.log(chalk.whiteBright('│ 🍂  Por favor, ingrese el número de WhatsApp'));
+          console.log(chalk.cyanBright('\n╭───────────────'));
+          console.log(chalk.whiteBright('│ 🍂  Ingrese su número de WhatsApp'));
           console.log(chalk.whiteBright('│ ✏  Ejemplo: 54911×××××××'));
-          console.log(chalk.blueBright('╰────────────────────────────────────────────'));
+          console.log(chalk.cyanBright('╰───────────────'));
 
           phoneNumber = await question(
-            chalk.bgBlack(chalk.bold.cyanBright('---> '))
+            chalk.bgBlack(chalk.bold.magentaBright('→ '))
 );
 
           phoneNumber = phoneNumber.replace(/\D/g, '');
@@ -217,15 +217,15 @@ if (!fs.existsSync(`./${Nagisessions}/creds.json`)) {
           let codeBot = await conn.requestPairingCode(addNumber);
           codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot;
 
-          console.log(chalk.blueBright('\n╭────────────────────────────────────────────'));
-          console.log(chalk.whiteBright('│ 🍃  Código de vinculación generado:'));
+          console.log(chalk.greenBright('\n╭───────────────'));
+          console.log(chalk.whiteBright('│ 🍃  Código generado:'));
           console.log(chalk.whiteBright(`│ 🔐  ${chalk.bold.cyanBright(codeBot)}`));
-          console.log(chalk.blueBright('╰────────────────────────────────────────────\n'));
+          console.log(chalk.greenBright('╰───────────────\n'));
 }, 3000);
 }
 }
 }
-}
+                                        }
 
 conn.isInit = false;
 conn.well = false;
