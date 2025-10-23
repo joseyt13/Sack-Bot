@@ -55,9 +55,9 @@ say('created by Dev-fedexyz', {
 });
 
 console.log(chalk.cyanBright('\n╔════════════════════════════╗'));
-console.log(chalk.whiteBright('║ 🌿 ESTADO: Iniciado        ║'));
-console.log(chalk.whiteBright('║ 🍃 CREADOR: Dev-fedexyz     ║'));
-console.log(chalk.whiteBright('║ 🍂 GITHUB: Dev-fedexyz13   ║'));
+console.log(chalk.whiteBright('║ 🌿   ESTADO: Iniciado        ║'));
+console.log(chalk.whiteBright('║ 🍃   CREADOR: Dev-fedexyz   ║'));
+console.log(chalk.whiteBright('║ 🍂   GITHUB: Dev-fedexyz13   ║'));
 console.log(chalk.cyanBright('╚════════════════════════════╝\n'));
 
 protoType();
