@@ -121,21 +121,18 @@ setTimeout(() => { conn.sendMessage(m.sender, { delete: txtQR.key })}, 45000)
 return
 } 
 if (qr && mcode) {
-  const usuario = m.sender.split('@')[0];
-  const rawCode = await sock.requestPairingCode(usuario);
+    const rawCode = await sock.requestPairingCode(m.sender.split`@`[0]);
 
-  const interactiveButtons = [
-    {
-      name: "cta_copy",
-      buttonParamsJson: JSON.stringify({
-        display_text: "ᴄᴏᴘɪᴀʀ - ᴄᴏᴅᴇ",
-        id: "copy-jadibot-code",
-        copy_code: rawCode
-})
-}
-  ];
+    const interactiveButtons = [{
+        name: "cta_copy",
+        buttonParamsJson: JSON.stringify({
+            display_text: "ᴄᴏᴘɪᴀʀ - ᴄᴏᴅᴇ",
+            id: "copy-jadibot-code",
+            copy_code: rawCode
+        })
+    }];
 
-  const interactiveMessage = {
+    const interactiveMessage = {
     image: { url: "https://files.catbox.moe/60z2ix.jpg"},
     caption: `*⚽ ¡𝐓𝐮 𝐜ó𝐝𝐢𝐠𝐨 𝐝𝐞 𝐚𝐜𝐜𝐞𝐬𝐨 𝐞𝐬𝐭á 𝐥𝐢𝐬𝐭𝐨! ⚽*\n\n` +
              `*➊* 𝐀𝐛𝐫𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐞𝐧 𝐨𝐭𝐫𝐨 𝐝𝐢𝐬𝐩𝐨𝐬𝐢𝐭𝐢𝐯𝐨.\n` +
@@ -144,11 +141,8 @@ if (qr && mcode) {
              `🔐 𝐓𝐨𝐜𝐚 𝐞𝐥 𝐛𝐨𝐭ó𝐧 𝐝𝐞 𝐚𝐛𝐚𝐣𝐨 𝐩𝐚𝐫𝐚 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐫.`,
     title: "🔗 𝐕𝐢𝐧𝐜𝐮𝐥𝐚𝐜𝐢ó𝐧 𝐝𝐞 𝐂ó𝐝𝐢𝐠𝐨 – 𝐍𝐚𝐠𝐢𝐁𝐨𝐭-𝐈𝐀",
     footer: "⏳ 𝐄𝐬𝐭𝐞 𝐜ó𝐝𝐢𝐠𝐨 𝐞𝐱𝐩𝐢𝐫𝐚𝐫á 𝐞𝐧 𝟐 𝐦𝐢𝐧𝐮𝐭𝐨𝐬.",
-    interactiveButtons
+  interactiveButtons
 };
-
-  await conn.sendMessage(m.chat, interactiveMessage, { quoted: m});
-}
     
     const sentMsg = await conn.sendMessage(m.chat, interactiveMessage, { quoted: m });
     console.log(`Código de vinculación enviado: ${rawCode}`);
