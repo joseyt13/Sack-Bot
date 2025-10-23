@@ -56,13 +56,13 @@ let handler = async (m, { conn, usedPrefix}) => {
         thumbnailUrl: imagen,
         mediaType: 1,
         renderLargerThumbnail: true,
-        sourceUrl: 'https://github.com/fedexyz' // Puedes cambiar esto por tu enlace oficial
+        sourceUrl: 'https://github.com/Dev-fedexyz13' // Puedes cambiar esto por tu enlace oficial
 }
 },
     buttons: [
       {
         buttonId: `${usedPrefix}menucompleto`,
-        buttonText: { displayText: '🌿 Menu'},
+        buttonText: { displayText: '🌿 ᴍᴇɴᴜ ᴄᴏᴍᴘʟᴇᴛᴏ'},
         type: 1
 }
     ]
@@ -71,9 +71,9 @@ let handler = async (m, { conn, usedPrefix}) => {
   await delay(400);
 };
 
-handler.help = ['menu2'];
+handler.help = ['menu'];
 handler.tags = ['main'];
-handler.command = ['menu2'];
+handler.command = ['menu', 'menú', 'help'];
 handler.register = true;
 
 export default handler;
