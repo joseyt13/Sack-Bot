@@ -17,8 +17,7 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz"
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
-let rtx = "*𝐕𝐢𝐧𝐜𝐮𝐥𝐚𝐜𝐢ó𝐧 𝐜𝐨𝐧 𝐐𝐑*"
-let rtx2 = `*𝐕𝐢𝐧𝐜𝐮𝐥𝐚𝐜𝐢ó𝐧 𝐜𝐨𝐧 𝐜ó𝐝𝐢𝐠𝐨*`
+let rtx = '*𝐕𝐢𝐧𝐜𝐮𝐥𝐚𝐜𝐢ó𝐧 𝐜𝐨𝐧 𝐐𝐑*';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
