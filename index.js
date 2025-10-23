@@ -37,32 +37,31 @@ const {CONNECTING} = ws
 const {chain} = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
-let { say } = cfonts
+console.clear();
+console.log(chalk.magentaBright('\n🍂 Iniciando NagiBot...\n'));
 
-console.log(chalk.magentaBright('\n🍂  Iniciando.....'))
-
-cfonts.say('NagiBot - MD', {
+say('NagiBot - MD', {
   font: 'chrome',
   align: 'center',
   gradient: ['#ff4fcb', '#ff77ff'],
   transition: true,
   env: 'node'
-})
+});
 
-cfonts.say('created by Dev-fedexyz', {
+say('created by Dev-fedexyz', {
   font: 'console',
   align: 'center',
   colors: ['blueBright']
-})
+});
 
-console.log(chalk.cyanBright('\n╭─────────────── Nagi-BotV1 ────────────────╮'));
-console.log(chalk.whiteBright('│ 🌿  ESTADO: iniciado correctamente         │'));
-console.log(chalk.whiteBright('│ 🍃  CREADOR: Dev-fedexyz                   │'));
-console.log(chalk.whiteBright('│ 🍂  GITHUB: github.com/Dev-fedexyz13       │'));
-console.log(chalk.cyanBright('╰───────────────────────────────────────────╯\n'));
+console.log(chalk.cyanBright('\n╔════════════════════════════╗'));
+console.log(chalk.whiteBright('║ 🌿 ESTADO: Iniciado        ║'));
+console.log(chalk.whiteBright('║ 🍃 CREADOR: Dev-fedexyz     ║'));
+console.log(chalk.whiteBright('║ 🍂 GITHUB: Dev-fedexyz13   ║'));
+console.log(chalk.cyanBright('╚════════════════════════════╝\n'));
 
-protoType()
-serialize()
+protoType();
+serialize();
 
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
 return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString();
