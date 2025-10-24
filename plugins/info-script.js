@@ -47,7 +47,7 @@ const handler = async (m, { conn}) => {
   await conn.sendMessage(
     m.chat,
     {
-      image: { url: "https://files.catbox.moe/60z2ix.jpg"},
+      image: { url: "https://kirito.my/media/images/33437668_k.jpg"},
       caption,
       title: "⚽ Nagi-BotV1",
       footer: "© 2024 – Proyecto Nagi-BotV1",
