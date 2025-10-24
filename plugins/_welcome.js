@@ -115,11 +115,11 @@ export { generarBienvenida, generarDespedida};
 export default handler;
 
 const iconos = [
-  'https://files.catbox.moe/18qri6.jpg',
-  'https://files.catbox.moe/60z2ix.jpg',
-  'https://files.catbox.moe/18qri6.jpg',
-  'https://files.catbox.moe/60z2ix.jpg',
-  'https://files.catbox.moe/18qri6.jpg'
+  'https://kirito.my/media/images/33437668_k.jpg',
+  'https://kirito.my/media/images/31336923_k.jpg',
+  'https://kirito.my/media/images/33437668_k.jpg',
+  'https://kirito.my/media/images/95668416_k.jpg',
+  'https://kirito.my/media/images/31336923_k.jpg'
 ];
 
 const defaultIcono = 'https://files.catbox.moe/60z2ix.jpg';
