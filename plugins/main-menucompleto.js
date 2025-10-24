@@ -4,6 +4,15 @@ let handler = async (m, { conn, usedPrefix}) => {
   const delay = ms => new Promise(res => setTimeout(res, ms));
   let nombre = await conn.getName(m.sender);
 
+  function getSaludo() {
+    const hora = new Date().getHours();
+    if (hora>= 5 && hora < 12) return 'Buen día';
+    if (hora>= 12 && hora < 18) return 'Buenas tardes';
+    return 'Buenas noches';
+}
+
+  let saludo = getSaludo();
+
   let tags = {
     info: 'ᴍᴇɴᴜ ɪɴꜰᴏ',
     anime: 'ᴍᴇɴᴜ ᴀɴɪᴍᴇ',
@@ -94,7 +103,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 },
       externalAdReply: {
         title: '© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ 🍂',
-        body: '⌬ 𝑵𝒂𝒈𝒊𝑩𝒐𝒕-𝑰𝑨 🍃',
+        body: `🍃 Hola ${nombre}, ${saludo}.`,
         thumbnailUrl: imagen,
         mediaType: 1,
         renderLargerThumbnail: true
