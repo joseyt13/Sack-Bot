@@ -48,7 +48,7 @@ say('NagiBot - MD', {
   env: 'node'
 });
 
-say('created by Dev-fedexyz', {
+say('Powered by Dev-fedexyz', {
   font: 'console',
   align: 'center',
   colors: ['blueBright']
