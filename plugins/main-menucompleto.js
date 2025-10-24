@@ -78,7 +78,7 @@ let handler = async (m, { conn, usedPrefix}) => {
   let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after;
   let imagen = 'https://files.catbox.moe/18qri6.jpg';
 
-  await m.react('⚽');
+  await m.react('🍃');
 
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
@@ -103,7 +103,7 @@ let handler = async (m, { conn, usedPrefix}) => {
     buttons: [
       {
         buttonId: `${usedPrefix}code`,
-        buttonText: { displayText: '📜 Código'},
+        buttonText: { displayText: 'ꜱᴇʀ ꜱᴜʙ-ʙᴏᴛ'},
         type: 1
 }
     ]
