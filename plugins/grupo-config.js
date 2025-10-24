@@ -1,38 +1,50 @@
 const handler = async (m, { conn, command, participants}) => {
-  if (!m.isGroup) {
-    return conn.reply(m.chat, 'Este comando solo funciona en grupos.', m);
-}
+  if (!m.isGroup) return;
 
   const isAdmin = participants.some(p => p.id === m.sender && p.admin);
   const botAdmin = participants.some(p => p.id === conn.user.jid && p.admin);
 
-  if (!isAdmin) {
-    return conn.reply(m.chat, 'Solo los administradores pueden usar este comando.', m);
+  if (command) {
+    if (!isAdmin) {
+      return conn.reply(m.chat, 'Solo los administradores pueden usar este comando.', m);
 }
 
-  if (!botAdmin) {
-    return conn.reply(m.chat, 'Necesito ser administrador para cambiar la configuración del grupo.', m);
+    if (!botAdmin) {
+      return conn.reply(m.chat, 'Necesito ser administrador para cambiar la configuración del grupo.', m);
 }
 
-  const isOpen = command === 'abrir';
-  const action = isOpen? 'not_announcement': 'announcement';
+    const isOpen = command === 'abrir';
+    const action = isOpen? 'not_announcement': 'announcement';
 
-  const estado = isOpen
-? '🍃 El grupo ha sido abierto.\n\nAhora todos pueden mandar mensajes al grupo.'
-: '🔒 El grupo ha sido cerrado.\n\nAhora solo los administradores pueden enviar mensajes al grupo.';
+    await conn.groupSettingUpdate(m.chat, action);
 
-  await conn.groupSettingUpdate(m.chat, action);
-  await conn.sendMessage(m.chat, { text: estado}, { quoted: m});
+    const estado = isOpen
+? '🍃 El grupo ha sido abierto.\nAhora todos pueden mandar mensajes al grupo.'
+: '🔒 El grupo ha sido cerrado.\nAhora solo los administradores pueden enviar mensajes al grupo.';
 
-  await conn.sendMessage(m.chat, {
-    text: '¿Qué deseas hacer?',
-    footer: 'Configuración del grupo',
-    buttons: [
-      { buttonId: '.abrir', buttonText: { displayText: 'ᴀʙʀɪʀ ɢʀᴜᴘᴏ'}, type: 1},
-      { buttonId: '.cerrar', buttonText: { displayText: 'ᴄᴇʀʀᴀʀ ɢʀᴜᴘᴏ'}, type: 1}
-    ],
-    headerType: 1
-}, { quoted: m});
+    await conn.sendMessage(m.chat, { text: estado}, { quoted: m});
+}
+};
+
+handler.before = async (m, { conn}) => {
+  if (!m.isGroup ||!m.messageStubType) return;
+
+  const stub = m.messageStubType;
+  const actor = m.messageStubParameters?.[0]?.split('@')[0];
+
+  if (stub === 29) {
+    await conn.sendMessage(m.chat, {
+      text: `🔒 El grupo fue cerrado por @${actor}.\nAhora solo los administradores pueden enviar mensajes.`,
+      mentions: [m.messageStubParameters[0]]
+});
+}
+
+  if (stub === 30) {
+    await conn.sendMessage(m.chat, {
+      text: `🍃 El grupo fue abierto por @${actor}.\nAhora todos pueden enviar mensajes.`,
+      mentions: [m.messageStubParameters[0]]
+});
+}
 };
 
 handler.help = ['abrir', 'cerrar'];
