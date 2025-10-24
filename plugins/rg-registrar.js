@@ -2,6 +2,7 @@ import { createHash} from 'crypto';
 
 const Reg = /\|?(.*?)[.|]\s*?(\d{1,4})$/i;
 const defaultProfile = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg';
+const grupoRegistro = '120363422479488737@g.us'; // Grupo destino para registros
 
 const handler = async (m, { conn, text, usedPrefix, command}) => {
   const user = global.db.data.users[m.sender];
@@ -61,6 +62,9 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
 }
 }
 }, { quoted: m});
+
+    const registroGrupo = `📥 *Nuevo registro*\n\n👤 Nombre: ${user.name}\n🎂 Edad: ${user.age}\n🔗 ID: ${m.sender}\n🕒 Hora: ${new Date().toLocaleString()}`;
+    await conn.sendMessage(grupoRegistro, { text: registroGrupo});
 }
 };
 
