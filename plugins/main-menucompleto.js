@@ -1,44 +1,44 @@
-import fs from 'fs'
+import fs from 'fs';
 
 let handler = async (m, { conn, usedPrefix}) => {
-  const delay = ms => new Promise(res => setTimeout(res, ms))
-  let nombre = await conn.getName(m.sender)
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  let nombre = await conn.getName(m.sender);
 
   let tags = {
-  info: 'ᴍᴇɴᴜ ɪɴꜰᴏ',
-  anime: 'ᴍᴇɴᴜ ᴀɴɪᴍᴇ',
-  buscador: 'ᴍᴇɴᴜ ʙᴜꜱᴄᴀᴅᴏʀ',
-  downloader: 'ᴍᴇɴᴜ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
-  fun: 'ᴍᴇɴᴜ ꜰᴜɴ',
-  grupo: 'ᴍᴇɴᴜ ɢʀᴜᴘᴏ',
-  ai: 'ᴍᴇɴᴜ ᴀɪ',
-  game: 'ᴍᴇɴᴜ ɢᴀᴍᴇ',
-  serbot: 'ᴍᴇɴᴜ ᴊᴀᴅɪʙᴏᴛ',
-  main: 'ᴍᴇɴᴜ ᴍᴀɪɴ',
-  nable: 'ᴍᴇɴᴜ ᴏɴ / ᴏꜰꜰ',
-  nsfw: 'ᴍᴇɴᴜ ɴꜱꜰᴡ',
-  owner: 'ᴍᴇɴᴜ ᴏᴡɴᴇʀ',
-  sticker: 'ᴍᴇɴᴜ ꜱᴛɪᴄᴋᴇʀ',
-  tools: 'ᴍᴇɴᴜ ᴛᴏᴏʟꜱ',
-  }
+    info: 'ᴍᴇɴᴜ ɪɴꜰᴏ',
+    anime: 'ᴍᴇɴᴜ ᴀɴɪᴍᴇ',
+    buscador: 'ᴍᴇɴᴜ ʙᴜꜱᴄᴀᴅᴏʀ',
+    downloader: 'ᴍᴇɴᴜ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
+    fun: 'ᴍᴇɴᴜ ꜰᴜɴ',
+    grupo: 'ᴍᴇɴᴜ ɢʀᴜᴘᴏ',
+    ai: 'ᴍᴇɴᴜ ᴀɪ',
+    game: 'ᴍᴇɴᴜ ɢᴀᴍᴇ',
+    serbot: 'ᴍᴇɴᴜ ᴊᴀᴅɪʙᴏᴛ',
+    main: 'ᴍᴇɴᴜ ᴍᴀɪɴ',
+    nable: 'ᴍᴇɴᴜ ᴏɴ / ᴏꜰꜰ',
+    nsfw: 'ᴍᴇɴᴜ ɴꜱꜰᴡ',
+    owner: 'ᴍᴇɴᴜ ᴏᴡɴᴇʀ',
+    sticker: 'ᴍᴇɴᴜ ꜱᴛɪᴄᴋᴇʀ',
+    tools: 'ᴍᴇɴᴜ ᴛᴏᴏʟꜱ',
+};
 
-  let header = '*_□  %category_*'
-  let body = '> ▪︎  *_%cmd_*'
-  let footer = ''
-  let after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`
+  let header = '*_□  %category_*';
+  let body = '> ▪︎  *_%cmd_*';
+  let footer = '';
+  let after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`;
 
-  let user = global.db.data.users[m.sender]
-  let premium = user.premium? '✅ Sí': '❌ No'
-  let limite = user.limit || 0
-  let totalreg = Object.keys(global.db.data.users).length
-  let groupsCount = Object.values(conn.chats).filter(v => v.id.endsWith('@g.us')).length
-  let muptime = clockString(process.uptime())
+  let user = global.db.data.users[m.sender];
+  let premium = user.premium? '✅ Sí': '❌ No';
+  let limite = user.limit || 0;
+  let totalreg = Object.keys(global.db.data.users).length;
+  let groupsCount = Object.values(conn.chats).filter(v => v.id.endsWith('@g.us')).length;
+  let muptime = clockString(process.uptime());
 
   function clockString(seconds) {
-    let h = Math.floor(seconds / 3600)
-    let m = Math.floor(seconds % 3600 / 60)
-    let s = Math.floor(seconds % 60)
-    return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
+    let h = Math.floor(seconds / 3600);
+    let m = Math.floor(seconds % 3600 / 60);
+    let s = Math.floor(seconds % 60);
+    return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
 }
 
   let infoUser = `
@@ -56,31 +56,29 @@ let handler = async (m, { conn, usedPrefix}) => {
 > *_Plataforma:_* *Ubuntu*
 
 *_🍃 𝘾 𝙊 𝙈 𝘼 𝙉 𝘿 𝙊 𝙎_*
-`.trim()
+`.trim();
 
-  let commands = Object.values(global.plugins).filter(v => v.help && v.tags && v.command).map(v => {
-    return {
-      help: Array.isArray(v.help)? v.help: [v.help],
-      tags: Array.isArray(v.tags)? v.tags: [v.tags],
-      command: Array.isArray(v.command)? v.command: [v.command]
-}
-})
+  let commands = Object.values(global.plugins).filter(v => v.help && v.tags && v.command).map(v => ({
+    help: Array.isArray(v.help)? v.help: [v.help],
+    tags: Array.isArray(v.tags)? v.tags: [v.tags],
+    command: Array.isArray(v.command)? v.command: [v.command]
+}));
 
-  let menu = []
+  let menu = [];
   for (let tag in tags) {
     let comandos = commands
 .filter(command => command.tags.includes(tag))
 .map(command => command.command.map(cmd => body.replace(/%cmd/g, usedPrefix + cmd)).join('\n'))
-.join('\n')
+.join('\n');
     if (comandos) {
-      menu.push(header.replace(/%category/g, tags[tag]) + '\n' + comandos + '\n' + footer)
+      menu.push(header.replace(/%category/g, tags[tag]) + '\n' + comandos + '\n' + footer);
 }
 }
 
-  let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
-  let imagen = 'https://files.catbox.moe/18qri6.jpg'
+  let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after;
+  let imagen = 'https://files.catbox.moe/18qri6.jpg';
 
-  await m.react('⚽')
+  await m.react('⚽');
 
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
@@ -101,15 +99,22 @@ let handler = async (m, { conn, usedPrefix}) => {
         mediaType: 1,
         renderLargerThumbnail: true
 }
+},
+    buttons: [
+      {
+        buttonId: `${usedPrefix}code`,
+        buttonText: { displayText: '📜 Código'},
+        type: 1
 }
-}, { quoted: m})
+    ]
+}, { quoted: m});
 
-  await delay(400)
-}
+  await delay(400);
+};
 
-handler.help = ['menucompleto']
-handler.tags = ['main']
-handler.command = ['menucompleto']
-handler.register = true
+handler.help = ['menucompleto'];
+handler.tags = ['main'];
+handler.command = ['menucompleto'];
+handler.register = true;
 
-export default handler
+export default handler;
