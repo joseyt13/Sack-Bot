@@ -54,12 +54,6 @@ say('created by Dev-fedexyz', {
   colors: ['blueBright']
 });
 
-console.log(chalk.cyanBright('\n╔════════════════════════════╗'));
-console.log(chalk.whiteBright('║ 🌿   ESTADO: Iniciado       ║'));
-console.log(chalk.whiteBright('║ 🍃   CREADOR: Dev-fedexyz   ║'));
-console.log(chalk.whiteBright('║ 🍂   GITHUB: Dev-fedexyz13  ║'));
-console.log(chalk.cyanBright('╚════════════════════════════╝\n'));
-
 protoType();
 serialize();
 
@@ -217,7 +211,7 @@ if (!fs.existsSync(`./${Nagisessions}/creds.json`)) {
           codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot;
 
           console.log(chalk.greenBright('\n╭───────────────'));
-          console.log(chalk.whiteBright('│ 🍃  Código generado:'));
+          console.log(chalk.whiteBright('│ 🍃  CODIGO GENERADO:'));
           console.log(chalk.whiteBright(`│ 🔐  ${chalk.bold.cyanBright(codeBot)}`));
           console.log(chalk.greenBright('╰───────────────\n'));
 }, 3000);
@@ -261,7 +255,7 @@ if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
 console.log(chalk.bold.cyanBright(`\n⚠︎ SIN CONEXIÓN, BORRE LA CARPETA ${global.Nagisessions} Y ESCANEA EL CÓDIGO QR ⚠︎`))
 } else if (reason === DisconnectReason.connectionClosed) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ☹\n┆ ⚠︎ CONEXION CERRADA, RECONECTANDO....\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ☹`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ 🍃\n┆ ⚠︎ CONEXION CERRADA, RECONECTANDO....\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ 🍃`))
 await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.connectionLost) {
 console.log(chalk.bold.blueBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ☂\n┆ ⚠︎ CONEXIÓN PERDIDA CON EL SERVIDOR, RECONECTANDO....\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ☂`))
@@ -278,7 +272,7 @@ await global.reloadHandler(true).catch(console.error)
 console.log(chalk.bold.yellowBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ▸\n┆ ⧖ TIEMPO DE CONEXIÓN AGOTADO, RECONECTANDO....\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄ ▸`))
 await global.reloadHandler(true).catch(console.error) //process.send('reset')
 } else {
-console.log(chalk.bold.redBright(`\n⚠︎！ RAZON DE DESCONEXIÓN DESCONOCIDA: ${reason || 'No encontrado'} >> ${connection || 'No encontrado'}`))
+console.log(chalk.bold.redBright(`\n⚠︎！ HUBO UNA DESCONEXIÓN DESCONOCIDA: ${reason || 'No encontrado'} >> ${connection || 'No encontrado'}`))
 }}
 }
 process.on('uncaughtException', console.error)
@@ -506,7 +500,7 @@ console.log(await purgeOldFiles());
 console.log(chalk.bold.cyanBright(`\n╭» ❍ ARCHIVOS ❍\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))}, 1000 * 60 * 10)
 
 _quickTest()
-.then(() => conn.logger.info(chalk.greenBright.bold('✅  BOT INICIADO CORRECTAMENTE')))
+.then(() => conn.logger.info(chalk.greenBright.bold('🍃 INICIANDO BOT`)))
 .catch(console.error);
 
 setInterval(async () => {
