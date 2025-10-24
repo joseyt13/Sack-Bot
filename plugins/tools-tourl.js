@@ -25,7 +25,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 
     if (!quoted || !mime || mime.includes('text/plain') || !quoted.download) {
       return conn.sendMessage(m.chat, {
-        text: `❌ Responde a un archivo con *${usedPrefix + command}*\n\n✅ Soportado: Imágenes, Videos, Audio, Documentos (no texto simple)`
+        text: `❌ Responde a un archivo con *${usedPrefix + command}*\n\n🍃 Soportado: Imágenes, Videos, Audio, Documentos (no texto simple)`
       }, { quoted: m });
     }
 
@@ -85,10 +85,10 @@ const handler = async (m, { conn, usedPrefix, command }) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `¡Subida exitosa!\nHaz clic en el botón de abajo para copiar`
+                text: `Haz clic en el botón de abajo para copiar`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "ITACHI BOT MD"
+                text: "𝑵𝒂𝒈𝒊𝑩𝒐𝒕 - 𝑰𝑨  🌿"
               }),
               nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                 buttons: [
