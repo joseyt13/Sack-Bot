@@ -16,15 +16,17 @@ const handler = async (m, { conn, command, participants}) => {
 
   const isOpen = command === 'abrir';
   const action = isOpen? 'not_announcement': 'announcement';
-  const mensaje = isOpen
+
+  const estado = isOpen
 ? '🍃 El grupo ha sido abierto.\n\nAhora todos pueden mandar mensajes al grupo.'
 : '🔒 El grupo ha sido cerrado.\n\nAhora solo los administradores pueden enviar mensajes al grupo.';
 
   await conn.groupSettingUpdate(m.chat, action);
+  await conn.sendMessage(m.chat, { text: estado}, { quoted: m});
 
   await conn.sendMessage(m.chat, {
-    text: mensaje,
-    footer: 'NagiBot-IA 🍃',
+    text: '¿Qué deseas hacer?',
+    footer: 'Configuración del grupo',
     buttons: [
       { buttonId: '.abrir', buttonText: { displayText: 'ᴀʙʀɪʀ ɢʀᴜᴘᴏ'}, type: 1},
       { buttonId: '.cerrar', buttonText: { displayText: 'ᴄᴇʀʀᴀʀ ɢʀᴜᴘᴏ'}, type: 1}
