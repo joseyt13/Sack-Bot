@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 > *_Límite:_* *${limite}*
 
 🌿 *_DATOS DEL BOT_*
-< *_Grupos:_* *${groupsCount}*
+> *_Grupos:_* *${groupsCount}*
 > *_Activo:_* *${muptime}*
 > *_Usuarios:_* *${totalreg}*
 > *_Plataforma:_* *Ubuntu*
