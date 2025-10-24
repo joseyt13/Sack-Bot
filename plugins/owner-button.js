@@ -43,7 +43,7 @@ const handler = async (m, { conn}) => {
 });
 };
 
-handler.help = [buttons'];
+handler.help = ['buttons'];
 handler.tags = ['owner'];
 handler.command = ['buttons'];
 handler.rowner = true;
