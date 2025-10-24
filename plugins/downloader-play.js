@@ -1,9 +1,11 @@
-// Código de https://github.com/Dioneibi-rip
 
-import fetch from "node-fetch"
-import yts from "yt-search"
+// Código creado por https://github.com/Dioneibi-rip
+// Editado por Dev-fedexyz
 
-const youtubeRegexID = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/
+import fetch from 'node-fetch';
+import yts from 'yt-search';
+
+const youtubeRegexID = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/;
 
 const handler = async (m, { conn, text, command}) => {
   try {
@@ -13,28 +15,29 @@ const handler = async (m, { conn, text, command}) => {
         '🌿 Debes escribir *el nombre o link* del video/audio para descargar.',
         m,
         global.rcanal
-)
+);
 }
 
-    await conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key}})
+    await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key}});
 
-    let videoIdToFind = text.match(youtubeRegexID) || null
-    let ytplay2 = await yts(videoIdToFind? "https://youtu.be/" + videoIdToFind[1]: text)
+    const videoIdMatch = text.match(youtubeRegexID);
+    const searchQuery = videoIdMatch? `https://youtu.be/${videoIdMatch[1]}`: text;
+    let ytResult = await yts(searchQuery);
 
-    if (videoIdToFind) {
-      const videoId = videoIdToFind[1]
-      ytplay2 = ytplay2.all.find(item => item.videoId === videoId) || ytplay2.videos.find(item => item.videoId === videoId)
+    if (videoIdMatch) {
+      const videoId = videoIdMatch[1];
+      ytResult = ytResult.all.find(v => v.videoId === videoId) || ytResult.videos.find(v => v.videoId === videoId);
 }
 
-    ytplay2 = ytplay2.all?.[0] || ytplay2.videos?.[0] || ytplay2
-    if (!ytplay2) {
-      await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key}})
-      return m.reply("⚠︎ No encontré resultados, intenta con otro nombre o link.")
+    const video = ytResult.all?.[0] || ytResult.videos?.[0] || ytResult;
+    if (!video) {
+      await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key}});
+      return m.reply('⚠︎ No encontré resultados, intenta con otro nombre o link.');
 }
 
-    let { title, thumbnail, timestamp, views, ago, url, author} = ytplay2
-    const vistas = formatViews(views)
-    const canal = author?.name || "Desconocido"
+    const { title, thumbnail, timestamp, views, ago, url, author} = video;
+    const canal = author?.name || 'Desconocido';
+    const vistas = formatViews(views);
 
     const infoMessage = `
 *_🍃 Descarga en camino..._*
@@ -47,14 +50,12 @@ const handler = async (m, { conn, text, command}) => {
 🔗 Link: ${url}
 
 🪵 Preparando tu descarga...
-    `.trim()
+    `.trim();
 
-    const thumb = (await conn.getFile(thumbnail))?.data
+    const thumb = (await conn.getFile(thumbnail))?.data;
     await conn.reply(m.chat, infoMessage, m, {
       contextInfo: {
         externalAdReply: {
-          title: 'NagiBot-MD',
-          body: 'Dev-fedexyz',
           mediaType: 1,
           thumbnail: thumb,
           renderLargerThumbnail: true,
@@ -62,75 +63,66 @@ const handler = async (m, { conn, text, command}) => {
           sourceUrl: url
 }
 }
-})
+});
 
-    if (["play", "yta", "ytmp3", "playaudio"].includes(command)) {
-      let audioData = null
-      try {
-        const r = await (await fetch(`https://ruby-core.vercel.app/api/download/youtube/mp3?url=${encodeURIComponent(url)}`)).json()
-        if (r?.status && r?.download?.url) {
-          audioData = { link: r.download.url, title: r.metadata?.title}
-}
-} catch {}
+    if (['play', 'yta', 'ytmp3', 'playaudio'].includes(command)) {
+      const audioRes = await fetch(`https://ruby-core.vercel.app/api/download/youtube/mp3?url=${encodeURIComponent(url)}`);
+      const audioJson = await audioRes.json();
 
-      if (!audioData) {
-        await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key}})
-        return conn.reply(m.chat, "🌿 No se pudo descargar el audio. Inténtalo después", m)
+      if (!audioJson?.status ||!audioJson?.download?.url) {
+        await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key}});
+        return conn.reply(m.chat, '🌿 No se pudo descargar el audio. Inténtalo después.', m);
 }
 
       await conn.sendMessage(m.chat, {
-        audio: { url: audioData.link},
-        fileName: `${audioData.title || "music"}.mp3`,
-        mimetype: "audio/mpeg",
+        audio: { url: audioJson.download.url},
+        fileName: `${audioJson.metadata?.title || 'music'}.mp3`,
+        mimetype: 'audio/mpeg',
         ptt: false
-}, { quoted: m})
+}, { quoted: m});
 
-      await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key}})
+      await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key}});
 }
 
-    else if (["play2", "playaudio", "ytmp4", "ytmp3"].includes(command)) {
-      let videoData = null
-      try {
-        const r = await (await fetch(`https://ruby-core.vercel.app/api/download/youtube/mp4?url=${encodeURIComponent(url)}`)).json()
-        if (r?.status && r?.download?.url) {
-          videoData = { link: r.download.url, title: r.metadata?.title}
-}
-} catch {}
+    else if (['play2', 'ytmp4'].includes(command)) {
+      const videoRes = await fetch(`https://ruby-core.vercel.app/api/download/youtube/mp4?url=${encodeURIComponent(url)}`);
+      const videoJson = await videoRes.json();
 
-      if (!videoData) {
-        await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key}})
-        return conn.reply(m.chat, "✦ No se pudo descargar el video. Intenta más tarde.", m)
+      if (!videoJson?.status ||!videoJson?.download?.url) {
+        await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key}});
+        return conn.reply(m.chat, '🍂 No se pudo descargar el video. Intenta más tarde.', m);
 }
 
       await conn.sendMessage(m.chat, {
-        video: { url: videoData.link},
-        fileName: `${videoData.title || "video"}.mp4`,
-        caption: `${title}`,
-        mimetype: "video/mp4"
-}, { quoted: m})
+        video: { url: videoJson.download.url},
+        fileName: `${videoJson.metadata?.title || 'video'}.mp4`,
+        caption: title,
+        mimetype: 'video/mp4'
+}, { quoted: m});
 
-      await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key}})
+      await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key}});
 }
 
     else {
-      return conn.reply(m.chat, "✧︎ Comando no válido, revisa el menú.", m)
+      return conn.reply(m.chat, '✧︎ Comando no válido, revisa el menú.', m);
 }
 
 } catch (error) {
-    await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key}})
-    return m.reply(`⚠︎ Error inesperado:\n\n${error}`)
+    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key}});
+    return m.reply(`⚠︎ Error inesperado:\n\n${error}`);
 }
-  }
+};
 
-handler.command = handler.help = ["play", "ytmp3", "play2", "ytmp4", "playaudio"]
-handler.tags = ["descargas"]
+handler.command = handler.help = ['play', 'ytmp3', 'play2', 'ytmp4', 'playaudio'];
+handler.tags = ['descargas'];
+handler.register = true
 
-export default handler
+export default handler;
 
 function formatViews(views) {
-  if (!views) return "No disponible"
-  if (views>= 1_000_000_000) return `${(views / 1_000_000_000).toFixed(1)}B`
-  if (views>= 1_000_000) return `${(views / 1_000_000).toFixed(1)}M`
-  if (views>= 1_000) return `${(views / 1_000).toFixed(1)}k`
-  return views.toString()
+  if (!views) return 'No disponible';
+  if (views>= 1_000_000_000) return `${(views / 1_000_000_000).toFixed(1)}B`;
+  if (views>= 1_000_000) return `${(views / 1_000_000).toFixed(1)}M`;
+  if (views>= 1_000) return `${(views / 1_000).toFixed(1)}k`;
+  return views.toString();
 }
