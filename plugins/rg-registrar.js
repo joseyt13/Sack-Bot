@@ -1,7 +1,7 @@
 import { createHash} from 'crypto';
 
 const GROUP_JID = '120363422479488737@g.us';
-const DEFAULT_PFP = 'https://cdn.yupra.my.id/yp/e0lrusaq.jpg';
+const DEFAULT_PFP = 'https://kirito.my/media/images/33437668_k.jpg';
 
 function parseInput(text) {
   const match = text.match(/\|?(.*?)[.|]\s*?(\d{1,4})$/i);
