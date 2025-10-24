@@ -31,7 +31,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 > *_Plataforma:_* *Ubuntu*
 `.trim();
 
-  const imagen = 'https://files.catbox.moe/60z2ix.jpg';
+  const imagen = 'https://kirito.my/media/images/95668416_k.jpg';
   const video = 'https://files.catbox.moe/6zg54n.mp4';
   const after = `© ᴍᴀᴅᴇ ʙʏ ᴅᴇᴠ-ꜰᴇᴅᴇxʏᴢ`;
 
@@ -67,8 +67,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   await delay(400);
 };
 
-handler.help = [''];
+handler.help = ['menu'];
 handler.tags = ['main'];
-handler.command = [''];
+handler.command = ['menu', 'help', 'menú'];
 
 export default handler;
