@@ -133,7 +133,7 @@ if (methodCodeQR) {
 if (!methodCodeQR &&!methodCode &&!fs.existsSync(`./${Nagisessions}/creds.json`)) {
   do {
     console.log(chalk.cyanBright('\n╓──────────────────────╗'));
-    console.log(chalk.whiteBright('║ 📚  Método de conexión'));
+    console.log(chalk.whiteBright('║ 🍃  Método de conexión'));
     console.log(chalk.whiteBright('║'));
     console.log(chalk.whiteBright('║ 1. Código QR'));
     console.log(chalk.whiteBright('║ 2. Código de 8 digitos'));
