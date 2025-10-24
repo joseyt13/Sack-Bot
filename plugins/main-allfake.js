@@ -31,11 +31,11 @@ global.getBuffer = async function getBuffer(url, options) {
 
 // Lista de iconos
 const iconUrls = [
-  "https://files.catbox.moe/18qri6.jpg",
-  "https://files.catbox.moe/npum4p.jpg",
-  "https://files.catbox.moe/18qri6.jpg",
-  "https://files.catbox.moe/tgcdgi.jpg",
-  "https://files.catbox.moe/60z2ix.jpg"
+  "https://kirito.my/media/images/33437668_k.jpg",
+  "https://kirito.my/media/images/31336923_k.jpg",
+  "https://kirito.my/media/images/33437668_k.jpg",
+  "https://kirito.my/media/images/95668416_k.jpg",
+  "https://kirito.my/media/images/33437668_k.jpg"
 ]
 
 // Función para elegir y descargar un icono aleatorio
