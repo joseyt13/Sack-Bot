@@ -67,8 +67,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   await delay(400);
 };
 
-handler.help = ['menu'];
+handler.help = [''];
 handler.tags = ['main'];
-handler.command = ['menu', 'menú', 'help'];
+handler.command = [''];
 
 export default handler;
