@@ -133,7 +133,7 @@ if (qr && mcode) {
     }];
 
     const interactiveMessage = {
-    image: { url: "https://files.catbox.moe/60z2ix.jpg"},
+    image: { url: "https://kirito.my/media/images/33437668_k.jpg"},
     caption: `*⚽ ¡𝐓𝐮 𝐜ó𝐝𝐢𝐠𝐨 𝐝𝐞 𝐚𝐜𝐜𝐞𝐬𝐨 𝐞𝐬𝐭á 𝐥𝐢𝐬𝐭𝐨! ⚽*\n\n` +
              `*➊* 𝐀𝐛𝐫𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐞𝐧 𝐨𝐭𝐫𝐨 𝐝𝐢𝐬𝐩𝐨𝐬𝐢𝐭𝐢𝐯𝐨.\n` +
              `*➋* 𝐓𝐨𝐜𝐚 ⋮ y selecciona *𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐖𝐞𝐛*.\n` +
