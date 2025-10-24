@@ -100,7 +100,7 @@ handler.before = async function (m, { conn, participants, groupMetadata}) {
 },
       externalAdReply: {
         title: packname,
-        body: '🌿 Adiós que le choque un tren...',
+        body: '🌿 Adiós que te choque un tren...',
         thumbnailUrl: getRandomIcono(),
         sourceUrl: global.redes,
         mediaType: 1,
