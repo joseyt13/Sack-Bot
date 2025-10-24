@@ -17,18 +17,18 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
   const infoUser = `
-🍃 *Hola, ${nombre} Soy Nagi-BotV1.*
+🍃 *_Hola, ${nombre} Soy Nagi-BotV1._*
 
 🌿 *_INFO USUARIO_*
-• 👤 *_Usuario:_* *${nombre}*
-• 💎 *_Premium:_* *${premium}*
-• 📌 *_Límite:_* *${limite}*
+> *_Usuario:_* *${nombre}*
+> *_Premium:_* *${premium}*
+> *_Límite:_* *${limite}*
 
 🌿 *_DATOS DEL BOT_*
-• 👥 *_Grupos:_* *${groupsCount}*
-• ⏱️ *_Activo:_* *${muptime}*
-• 🌐 *_Usuarios:_* *${totalreg}*
-• 🖥️ *_Plataforma:_* *Ubuntu*
+< *_Grupos:_* *${groupsCount}*
+> *_Activo:_* *${muptime}*
+> *_Usuarios:_* *${totalreg}*
+> *_Plataforma:_* *Ubuntu*
 `.trim();
 
   const imagen = 'https://files.catbox.moe/60z2ix.jpg';
