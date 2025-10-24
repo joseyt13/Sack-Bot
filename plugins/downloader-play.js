@@ -48,8 +48,6 @@ const handler = async (m, { conn, text, command}) => {
 👁️ Vistas: *${vistas}*
 📅 Publicado: *${ago}*
 🔗 Link: ${url}
-
-🪵 Preparando tu descarga...
     `.trim();
 
     const thumb = (await conn.getFile(thumbnail))?.data;
